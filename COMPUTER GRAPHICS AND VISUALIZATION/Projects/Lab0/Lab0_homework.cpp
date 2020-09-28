@@ -19,6 +19,10 @@ void draw_landscape(){
     int wing_x[] =      {300,   400,    300,    200};
     int wing_y[] =      {200,   300,    400,    300};
     int wing_color[] =  {BLUE,  GREEN,  CYAN,   RED};
+    // Text on the wings settings
+    char wing_text[16] = "Wing X";
+    int text_justify_h[] = {CENTER_TEXT, LEFT_TEXT,    RIGHT_TEXT,  RIGHT_TEXT };
+    int text_justify_v[] = {BOTTOM_TEXT, VCENTER_TEXT, BOTTOM_TEXT, TOP_TEXT   };
     
     // draw arcs of the wings
     for(int i=0 ; i<4; i++){
@@ -31,14 +35,18 @@ void draw_landscape(){
         setfillstyle(1, wing_color[i]);
         floodfill(wing_x[i], wing_y[i], getcolor());
     }
-    // bar(0, 0, getmaxx(), getmaxy());
-    //settextstyle(4, 0, 5);
-    //char text[100] = "And this is how we Roll";
-    //outtextxy(20, 20, text);
-    // setfillstyle(1,DARKGRAY);
-    // bar(0, getmaxy() - 250, getmaxx(), getmaxy());
-    //setfillstyle(1, 15);
-    //bar(0, getmaxy() - 175, getmaxx(), getmaxy() - 185);
+    // Put text on the wing
+    for(int i=0 ; i<4; i++){
+        circle(wing_x[i], wing_y[i], 3); // helper to see a center of the wing
+        
+        settextstyle(GOTHIC_FONT, 0, 2);
+        sprintf(wing_text, "Wing %d", i);
+        settextjustify(text_justify_h[i], text_justify_v[i]);
+        outtextxy(wing_x[i], wing_y[i], wing_text);
+    }
+    
+    // Comment: 
+    //  * vertical centring alignment of the text at the wing 1 not works as I expected(it looks like bottom alignment)  
 }
 int main(){
     // std::cout << "Hello World!";
@@ -47,7 +55,5 @@ int main(){
     int initial_y = 200;
     draw_landscape();
     getch();
-
-
     return 0;
 }
