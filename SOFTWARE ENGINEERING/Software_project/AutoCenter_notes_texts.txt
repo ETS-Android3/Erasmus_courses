@@ -2,19 +2,19 @@ Leather Interior            checkBoxLeatherInterior
 Computer Navigation         checkBoxComputerNavigation
 
 Car Exterior Finish
-Standard
-Pearlized
-Customized Detailing
+Standard                    radioButtonStandard
+Pearlized                   radioButtonPearlized
+Customized Detailing        radioButtonCustomizedDetailing
 
-Calculate
-Clear
-Print Form
-Exit
+Calculate                   buttonCalculate
+Clear                       buttonClear
+Print Form                  buttonPrintForm
+Exit                        buttonExit
 
-Car's Sales Price:
-Accessories & Finish:
-Subtotal:
-Sales Tax(8%):
-Total:
-Trade-in Allowance
-Amount Due:
+Car's Sales Price:          labelCarSSalesPrice     textBoxCarSSalesPrice
+Accessories & Finish:       labelAccessoriesFinish  textBoxAccessoriesFinish
+Subtotal:                   labelSubtotal      textBoxSubtotal
+Sales Tax(8%):              labelSalesTax_8      textBoxSalesTax_8
+Total:                      labelTotal      textBoxTotal
+Trade-in Allowance          labelTradeInAllowance      textBoxTradeInAllowance
+Amount Due:                 labelAmountDue      textBoxAmountDue
