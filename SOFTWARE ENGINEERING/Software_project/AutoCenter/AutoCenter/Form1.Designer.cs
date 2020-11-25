@@ -170,7 +170,7 @@
             // 
             // buttonPrintForm
             // 
-            this.buttonPrintForm.Location = new System.Drawing.Point(305, 298);
+            this.buttonPrintForm.Location = new System.Drawing.Point(296, 298);
             this.buttonPrintForm.Name = "buttonPrintForm";
             this.buttonPrintForm.Size = new System.Drawing.Size(130, 62);
             this.buttonPrintForm.TabIndex = 2;
@@ -179,7 +179,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(450, 298);
+            this.buttonExit.Location = new System.Drawing.Point(432, 298);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(130, 62);
             this.buttonExit.TabIndex = 2;
@@ -202,7 +202,7 @@
             this.panel1.Controls.Add(this.textBoxSubtotal);
             this.panel1.Controls.Add(this.textBoxAccessoriesFinish);
             this.panel1.Controls.Add(this.textBoxCarSSalesPrice);
-            this.panel1.Location = new System.Drawing.Point(296, 22);
+            this.panel1.Location = new System.Drawing.Point(278, 48);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(284, 226);
             this.panel1.TabIndex = 4;
@@ -365,7 +365,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 383);
+            this.ClientSize = new System.Drawing.Size(584, 383);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonPrintForm);
