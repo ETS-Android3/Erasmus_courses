@@ -1,0 +1,20 @@
+Leather Interior            checkBoxLeatherInterior
+Computer Navigation         checkBoxComputerNavigation
+
+Car Exterior Finish
+Standard
+Pearlized
+Customized Detailing
+
+Calculate
+Clear
+Print Form
+Exit
+
+Car's Sales Price:
+Accessories & Finish:
+Subtotal:
+Sales Tax(8%):
+Total:
+Trade-in Allowance
+Amount Due:
