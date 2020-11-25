@@ -58,9 +58,20 @@
             this.textBoxAccessoriesFinish = new System.Windows.Forms.TextBox();
             this.textBoxCarSSalesPrice = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemPrintForm = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemCalculate = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.radioButtonCarExteriorFinish.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -68,7 +79,7 @@
             this.groupBox1.Controls.Add(this.checkBoxComputerNavigation);
             this.groupBox1.Controls.Add(this.checkBoxLeatherInterior);
             this.groupBox1.Controls.Add(this.checkBoxStereoSystem);
-            this.groupBox1.Location = new System.Drawing.Point(24, 22);
+            this.groupBox1.Location = new System.Drawing.Point(24, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(250, 128);
             this.groupBox1.TabIndex = 0;
@@ -177,6 +188,7 @@
             this.buttonPrintForm.TabIndex = 2;
             this.buttonPrintForm.Text = "Print Form";
             this.buttonPrintForm.UseVisualStyleBackColor = true;
+            this.buttonPrintForm.Click += new System.EventHandler(this.buttonPrintForm_Click);
             // 
             // buttonExit
             // 
@@ -370,13 +382,96 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.OwnerItem = this.toolStripMenuItemFile;
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // toolStripMenuItemFile
+            // 
+            this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemPrintForm,
+            this.toolStripMenuItemExit});
+            this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
+            this.toolStripMenuItemFile.Size = new System.Drawing.Size(46, 24);
+            this.toolStripMenuItemFile.Text = "File";
+            // 
+            // toolStripMenuItemPrintForm
+            // 
+            this.toolStripMenuItemPrintForm.Name = "toolStripMenuItemPrintForm";
+            this.toolStripMenuItemPrintForm.Size = new System.Drawing.Size(160, 26);
+            this.toolStripMenuItemPrintForm.Text = "Print Form";
+            this.toolStripMenuItemPrintForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolStripMenuItemPrintForm.Click += new System.EventHandler(this.buttonPrintForm_Click);
+            // 
+            // toolStripMenuItemExit
+            // 
+            this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
+            this.toolStripMenuItemExit.Size = new System.Drawing.Size(160, 26);
+            this.toolStripMenuItemExit.Text = "Exit";
+            this.toolStripMenuItemExit.Click += new System.EventHandler(this.buttonExit_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemFile,
+            this.toolStripMenuItemEdit,
+            this.toolStripMenuItemHelp});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(584, 28);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItemEdit
+            // 
+            this.toolStripMenuItemEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemCalculate,
+            this.toolStripMenuItemClear});
+            this.toolStripMenuItemEdit.Name = "toolStripMenuItemEdit";
+            this.toolStripMenuItemEdit.Size = new System.Drawing.Size(49, 24);
+            this.toolStripMenuItemEdit.Text = "Edit";
+            // 
+            // toolStripMenuItemCalculate
+            // 
+            this.toolStripMenuItemCalculate.Name = "toolStripMenuItemCalculate";
+            this.toolStripMenuItemCalculate.Size = new System.Drawing.Size(153, 26);
+            this.toolStripMenuItemCalculate.Text = "Calculate";
+            this.toolStripMenuItemCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
+            // 
+            // toolStripMenuItemClear
+            // 
+            this.toolStripMenuItemClear.Name = "toolStripMenuItemClear";
+            this.toolStripMenuItemClear.Size = new System.Drawing.Size(153, 26);
+            this.toolStripMenuItemClear.Text = "Clear";
+            this.toolStripMenuItemClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
+            // toolStripMenuItemHelp
+            // 
+            this.toolStripMenuItemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemAbout});
+            this.toolStripMenuItemHelp.Name = "toolStripMenuItemHelp";
+            this.toolStripMenuItemHelp.Size = new System.Drawing.Size(55, 24);
+            this.toolStripMenuItemHelp.Text = "Help";
+            // 
+            // toolStripMenuItemAbout
+            // 
+            this.toolStripMenuItemAbout.Name = "toolStripMenuItemAbout";
+            this.toolStripMenuItemAbout.Size = new System.Drawing.Size(133, 26);
+            this.toolStripMenuItemAbout.Text = "About";
+            this.toolStripMenuItemAbout.Click += new System.EventHandler(this.helpAbout_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(32, 19);
+            this.toolStripMenuItem2.Text = "toolStripMenuItem2";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 383);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonPrintForm);
@@ -385,6 +480,7 @@
             this.Controls.Add(this.radioButtonCarExteriorFinish);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Auto Center";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -394,7 +490,10 @@
             this.radioButtonCarExteriorFinish.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -428,6 +527,16 @@
         private System.Windows.Forms.TextBox textBoxTradeInAllowance;
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.TextBox textBoxSalesTax_8;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFile;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemPrintForm;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExit;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEdit;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHelp;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCalculate;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClear;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAbout;
     }
 }
 

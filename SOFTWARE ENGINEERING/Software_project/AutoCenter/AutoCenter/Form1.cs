@@ -24,6 +24,10 @@ namespace AutoCenter
 
         }
 
+        private void helpAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This section is about App and Author", "About");
+        }
         private void buttonClear_Click(object sender, EventArgs e)
         {
             clearDataAndWindow();
@@ -61,6 +65,11 @@ namespace AutoCenter
             Application.Exit();
         }
 
+        private void buttonPrintForm_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void getDataFromTradeInAllowance()
         {
             try
@@ -77,10 +86,12 @@ namespace AutoCenter
         private void clearData()
         {
             this.carSalesPrice = 0;
-            this.amount = 0;
             this.accessoriesFinish = 0;
+            this.subtotal = 0;
+            this.amount = 0;
             this.tax8 = 0;
             this.total = 0;
+            this.tradeInAllowance = 0;
         }
         private void clearDataAndWindow()
         {
@@ -90,6 +101,7 @@ namespace AutoCenter
             this.checkBoxComputerNavigation.Checked = false;
             this.radioButtonStandard.Checked = true;
             this.textBoxCarSSalesPrice.Text = "0";
+            this.textBoxTradeInAllowance.Text = "0";
         }
         private void calculate()
         {
