@@ -124,7 +124,6 @@
             this.radioButtonCustomizedDetailing.Name = "radioButtonCustomizedDetailing";
             this.radioButtonCustomizedDetailing.Size = new System.Drawing.Size(173, 24);
             this.radioButtonCustomizedDetailing.TabIndex = 0;
-            this.radioButtonCustomizedDetailing.TabStop = true;
             this.radioButtonCustomizedDetailing.Text = "Customized Detailing";
             this.radioButtonCustomizedDetailing.UseVisualStyleBackColor = true;
             // 
@@ -135,13 +134,13 @@
             this.radioButtonPearlized.Name = "radioButtonPearlized";
             this.radioButtonPearlized.Size = new System.Drawing.Size(90, 24);
             this.radioButtonPearlized.TabIndex = 0;
-            this.radioButtonPearlized.TabStop = true;
             this.radioButtonPearlized.Text = "Pearlized";
             this.radioButtonPearlized.UseVisualStyleBackColor = true;
             // 
             // radioButtonStandard
             // 
             this.radioButtonStandard.AutoSize = true;
+            this.radioButtonStandard.Checked = true;
             this.radioButtonStandard.Location = new System.Drawing.Point(7, 27);
             this.radioButtonStandard.Name = "radioButtonStandard";
             this.radioButtonStandard.Size = new System.Drawing.Size(90, 24);
@@ -158,6 +157,7 @@
             this.buttonCalculate.TabIndex = 2;
             this.buttonCalculate.Text = "Calculate";
             this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // buttonClear
             // 
@@ -167,6 +167,7 @@
             this.buttonClear.TabIndex = 2;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonPrintForm
             // 
@@ -185,6 +186,7 @@
             this.buttonExit.TabIndex = 2;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // panel1
             // 
@@ -361,6 +363,7 @@
             this.textBoxCarSSalesPrice.Name = "textBoxCarSSalesPrice";
             this.textBoxCarSSalesPrice.Size = new System.Drawing.Size(120, 27);
             this.textBoxCarSSalesPrice.TabIndex = 0;
+            this.textBoxCarSSalesPrice.Text = "0";
             this.textBoxCarSSalesPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // contextMenuStrip1
