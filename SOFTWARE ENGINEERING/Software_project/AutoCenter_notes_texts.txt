@@ -1,7 +1,8 @@
+Computer Navigation         checkBoxStereoSystem
 Leather Interior            checkBoxLeatherInterior
 Computer Navigation         checkBoxComputerNavigation
 
-Car Exterior Finish
+Car Exterior Finish         radioButtonCarExteriorFinish
 Standard                    radioButtonStandard
 Pearlized                   radioButtonPearlized
 Customized Detailing        radioButtonCustomizedDetailing
@@ -16,5 +17,5 @@ Accessories & Finish:       labelAccessoriesFinish  textBoxAccessoriesFinish
 Subtotal:                   labelSubtotal      textBoxSubtotal
 Sales Tax(8%):              labelSalesTax_8      textBoxSalesTax_8
 Total:                      labelTotal      textBoxTotal
-Trade-in Allowance          labelTradeInAllowance      textBoxTradeInAllowance
+Trade-in Allowance:         labelTradeInAllowance      textBoxTradeInAllowance
 Amount Due:                 labelAmountDue      textBoxAmountDue

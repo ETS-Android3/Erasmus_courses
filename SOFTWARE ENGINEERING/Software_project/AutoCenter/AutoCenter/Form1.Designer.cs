@@ -31,42 +31,42 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxComputerNavigation = new System.Windows.Forms.CheckBox();
+            this.checkBoxLeatherInterior = new System.Windows.Forms.CheckBox();
             this.checkBoxStereoSystem = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.radioButtonCarExteriorFinish = new System.Windows.Forms.GroupBox();
+            this.radioButtonCustomizedDetailing = new System.Windows.Forms.RadioButton();
+            this.radioButtonPearlized = new System.Windows.Forms.RadioButton();
+            this.radioButtonStandard = new System.Windows.Forms.RadioButton();
+            this.buttonCalculate = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonPrintForm = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelAmountDue = new System.Windows.Forms.Label();
+            this.labelTradeInAllowance = new System.Windows.Forms.Label();
+            this.labelTotal = new System.Windows.Forms.Label();
+            this.labelSalesTax_8 = new System.Windows.Forms.Label();
+            this.labelSubtotal = new System.Windows.Forms.Label();
+            this.labelAccessoriesFinish = new System.Windows.Forms.Label();
+            this.labelCarSSalesPrice = new System.Windows.Forms.Label();
+            this.textBoxAmountDue = new System.Windows.Forms.TextBox();
+            this.textBoxTradeInAllowance = new System.Windows.Forms.TextBox();
+            this.textBoxTotal = new System.Windows.Forms.TextBox();
+            this.textBoxSalesTax_8 = new System.Windows.Forms.TextBox();
+            this.textBoxSubtotal = new System.Windows.Forms.TextBox();
+            this.textBoxAccessoriesFinish = new System.Windows.Forms.TextBox();
+            this.textBoxCarSSalesPrice = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.radioButtonCarExteriorFinish.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.checkBoxComputerNavigation);
+            this.groupBox1.Controls.Add(this.checkBoxLeatherInterior);
             this.groupBox1.Controls.Add(this.checkBoxStereoSystem);
             this.groupBox1.Location = new System.Drawing.Point(24, 22);
             this.groupBox1.Name = "groupBox1";
@@ -75,25 +75,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Accessories";
             // 
-            // checkBox3
+            // checkBoxComputerNavigation
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(7, 89);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(174, 24);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Computer Navigation";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxComputerNavigation.AutoSize = true;
+            this.checkBoxComputerNavigation.Location = new System.Drawing.Point(7, 89);
+            this.checkBoxComputerNavigation.Name = "checkBoxComputerNavigation";
+            this.checkBoxComputerNavigation.Size = new System.Drawing.Size(174, 24);
+            this.checkBoxComputerNavigation.TabIndex = 2;
+            this.checkBoxComputerNavigation.Text = "Computer Navigation";
+            this.checkBoxComputerNavigation.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxLeatherInterior
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(7, 58);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(132, 24);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Leather Interior";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxLeatherInterior.AutoSize = true;
+            this.checkBoxLeatherInterior.Location = new System.Drawing.Point(7, 58);
+            this.checkBoxLeatherInterior.Name = "checkBoxLeatherInterior";
+            this.checkBoxLeatherInterior.Size = new System.Drawing.Size(132, 24);
+            this.checkBoxLeatherInterior.TabIndex = 1;
+            this.checkBoxLeatherInterior.Text = "Leather Interior";
+            this.checkBoxLeatherInterior.UseVisualStyleBackColor = true;
             // 
             // checkBoxStereoSystem
             // 
@@ -105,255 +105,255 @@
             this.checkBoxStereoSystem.Text = "Stereo System";
             this.checkBoxStereoSystem.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // radioButtonCarExteriorFinish
             // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(24, 167);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(250, 125);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Car Exterior Finish";
+            this.radioButtonCarExteriorFinish.Controls.Add(this.radioButtonCustomizedDetailing);
+            this.radioButtonCarExteriorFinish.Controls.Add(this.radioButtonPearlized);
+            this.radioButtonCarExteriorFinish.Controls.Add(this.radioButtonStandard);
+            this.radioButtonCarExteriorFinish.Location = new System.Drawing.Point(24, 167);
+            this.radioButtonCarExteriorFinish.Name = "radioButtonCarExteriorFinish";
+            this.radioButtonCarExteriorFinish.Size = new System.Drawing.Size(250, 125);
+            this.radioButtonCarExteriorFinish.TabIndex = 1;
+            this.radioButtonCarExteriorFinish.TabStop = false;
+            this.radioButtonCarExteriorFinish.Text = "Car Exterior Finish";
             // 
-            // radioButton3
+            // radioButtonCustomizedDetailing
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 87);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(173, 24);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Customized Detailing";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButtonCustomizedDetailing.AutoSize = true;
+            this.radioButtonCustomizedDetailing.Location = new System.Drawing.Point(6, 87);
+            this.radioButtonCustomizedDetailing.Name = "radioButtonCustomizedDetailing";
+            this.radioButtonCustomizedDetailing.Size = new System.Drawing.Size(173, 24);
+            this.radioButtonCustomizedDetailing.TabIndex = 0;
+            this.radioButtonCustomizedDetailing.TabStop = true;
+            this.radioButtonCustomizedDetailing.Text = "Customized Detailing";
+            this.radioButtonCustomizedDetailing.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonPearlized
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 57);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(90, 24);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Pearlized";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonPearlized.AutoSize = true;
+            this.radioButtonPearlized.Location = new System.Drawing.Point(6, 57);
+            this.radioButtonPearlized.Name = "radioButtonPearlized";
+            this.radioButtonPearlized.Size = new System.Drawing.Size(90, 24);
+            this.radioButtonPearlized.TabIndex = 0;
+            this.radioButtonPearlized.TabStop = true;
+            this.radioButtonPearlized.Text = "Pearlized";
+            this.radioButtonPearlized.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonStandard
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 27);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(90, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Standard";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonStandard.AutoSize = true;
+            this.radioButtonStandard.Location = new System.Drawing.Point(7, 27);
+            this.radioButtonStandard.Name = "radioButtonStandard";
+            this.radioButtonStandard.Size = new System.Drawing.Size(90, 24);
+            this.radioButtonStandard.TabIndex = 0;
+            this.radioButtonStandard.TabStop = true;
+            this.radioButtonStandard.Text = "Standard";
+            this.radioButtonStandard.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonCalculate
             // 
-            this.button1.Location = new System.Drawing.Point(24, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 62);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "buttonCalculate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Location = new System.Drawing.Point(24, 298);
+            this.buttonCalculate.Name = "buttonCalculate";
+            this.buttonCalculate.Size = new System.Drawing.Size(130, 62);
+            this.buttonCalculate.TabIndex = 2;
+            this.buttonCalculate.Text = "Calculate";
+            this.buttonCalculate.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonClear
             // 
-            this.button2.Location = new System.Drawing.Point(160, 298);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 62);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Clear";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonClear.Location = new System.Drawing.Point(160, 298);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(130, 62);
+            this.buttonClear.TabIndex = 2;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonPrintForm
             // 
-            this.button3.Location = new System.Drawing.Point(305, 298);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 62);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Print Form";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonPrintForm.Location = new System.Drawing.Point(305, 298);
+            this.buttonPrintForm.Name = "buttonPrintForm";
+            this.buttonPrintForm.Size = new System.Drawing.Size(130, 62);
+            this.buttonPrintForm.TabIndex = 2;
+            this.buttonPrintForm.Text = "Print Form";
+            this.buttonPrintForm.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonExit
             // 
-            this.button4.Location = new System.Drawing.Point(450, 298);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(130, 62);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Exit";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonExit.Location = new System.Drawing.Point(450, 298);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(130, 62);
+            this.buttonExit.TabIndex = 2;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.labelAmountDue);
+            this.panel1.Controls.Add(this.labelTradeInAllowance);
+            this.panel1.Controls.Add(this.labelTotal);
+            this.panel1.Controls.Add(this.labelSalesTax_8);
+            this.panel1.Controls.Add(this.labelSubtotal);
+            this.panel1.Controls.Add(this.labelAccessoriesFinish);
+            this.panel1.Controls.Add(this.labelCarSSalesPrice);
+            this.panel1.Controls.Add(this.textBoxAmountDue);
+            this.panel1.Controls.Add(this.textBoxTradeInAllowance);
+            this.panel1.Controls.Add(this.textBoxTotal);
+            this.panel1.Controls.Add(this.textBoxSalesTax_8);
+            this.panel1.Controls.Add(this.textBoxSubtotal);
+            this.panel1.Controls.Add(this.textBoxAccessoriesFinish);
+            this.panel1.Controls.Add(this.textBoxCarSSalesPrice);
             this.panel1.Location = new System.Drawing.Point(296, 22);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(284, 226);
             this.panel1.TabIndex = 4;
             // 
-            // label7
+            // labelAmountDue
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(62, 199);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 20);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Amount Due:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelAmountDue.AutoSize = true;
+            this.labelAmountDue.Location = new System.Drawing.Point(62, 199);
+            this.labelAmountDue.Name = "labelAmountDue";
+            this.labelAmountDue.Size = new System.Drawing.Size(96, 20);
+            this.labelAmountDue.TabIndex = 1;
+            this.labelAmountDue.Text = "Amount Due:";
+            this.labelAmountDue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label6
+            // labelTradeInAllowance
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 166);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 20);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Trade-in Allowance:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTradeInAllowance.AutoSize = true;
+            this.labelTradeInAllowance.Location = new System.Drawing.Point(18, 166);
+            this.labelTradeInAllowance.Name = "labelTradeInAllowance";
+            this.labelTradeInAllowance.Size = new System.Drawing.Size(140, 20);
+            this.labelTradeInAllowance.TabIndex = 1;
+            this.labelTradeInAllowance.Text = "Trade-in Allowance:";
+            this.labelTradeInAllowance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label5
+            // labelTotal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(113, 133);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 20);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Total:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Location = new System.Drawing.Point(113, 133);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(45, 20);
+            this.labelTotal.TabIndex = 1;
+            this.labelTotal.Text = "Total:";
+            this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label4
+            // labelSalesTax_8
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Sales Tax(8%):";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelSalesTax_8.AutoSize = true;
+            this.labelSalesTax_8.Location = new System.Drawing.Point(57, 100);
+            this.labelSalesTax_8.Name = "labelSalesTax_8";
+            this.labelSalesTax_8.Size = new System.Drawing.Size(101, 20);
+            this.labelSalesTax_8.TabIndex = 1;
+            this.labelSalesTax_8.Text = "Sales Tax(8%):";
+            this.labelSalesTax_8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // labelSubtotal
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Subtotal:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelSubtotal.AutoSize = true;
+            this.labelSubtotal.Location = new System.Drawing.Point(90, 67);
+            this.labelSubtotal.Name = "labelSubtotal";
+            this.labelSubtotal.Size = new System.Drawing.Size(68, 20);
+            this.labelSubtotal.TabIndex = 1;
+            this.labelSubtotal.Text = "Subtotal:";
+            this.labelSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // labelAccessoriesFinish
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(133, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Accessories & Finish:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelAccessoriesFinish.AutoSize = true;
+            this.labelAccessoriesFinish.Location = new System.Drawing.Point(25, 34);
+            this.labelAccessoriesFinish.Name = "labelAccessoriesFinish";
+            this.labelAccessoriesFinish.Size = new System.Drawing.Size(133, 20);
+            this.labelAccessoriesFinish.TabIndex = 1;
+            this.labelAccessoriesFinish.Text = "Accessories & Finish:";
+            this.labelAccessoriesFinish.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // labelCarSSalesPrice
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Car\'s Sales Price:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelCarSSalesPrice.AutoSize = true;
+            this.labelCarSSalesPrice.Location = new System.Drawing.Point(41, 3);
+            this.labelCarSSalesPrice.Name = "labelCarSSalesPrice";
+            this.labelCarSSalesPrice.Size = new System.Drawing.Size(117, 20);
+            this.labelCarSSalesPrice.TabIndex = 1;
+            this.labelCarSSalesPrice.Text = "Car\'s Sales Price:";
+            this.labelCarSSalesPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox7
+            // textBoxAmountDue
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(164, 196);
-            this.textBox7.MaximumSize = new System.Drawing.Size(120, 27);
-            this.textBox7.MinimumSize = new System.Drawing.Size(120, 27);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(120, 27);
-            this.textBox7.TabIndex = 0;
+            this.textBoxAmountDue.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxAmountDue.Enabled = false;
+            this.textBoxAmountDue.Location = new System.Drawing.Point(164, 196);
+            this.textBoxAmountDue.MaximumSize = new System.Drawing.Size(120, 27);
+            this.textBoxAmountDue.MinimumSize = new System.Drawing.Size(120, 27);
+            this.textBoxAmountDue.Name = "textBoxAmountDue";
+            this.textBoxAmountDue.ReadOnly = true;
+            this.textBoxAmountDue.Size = new System.Drawing.Size(120, 27);
+            this.textBoxAmountDue.TabIndex = 0;
             // 
-            // textBox6
+            // textBoxTradeInAllowance
             // 
-            this.textBox6.Location = new System.Drawing.Point(164, 163);
-            this.textBox6.MaximumSize = new System.Drawing.Size(120, 27);
-            this.textBox6.MinimumSize = new System.Drawing.Size(120, 27);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(120, 27);
-            this.textBox6.TabIndex = 0;
+            this.textBoxTradeInAllowance.Location = new System.Drawing.Point(164, 163);
+            this.textBoxTradeInAllowance.MaximumSize = new System.Drawing.Size(120, 27);
+            this.textBoxTradeInAllowance.MinimumSize = new System.Drawing.Size(120, 27);
+            this.textBoxTradeInAllowance.Name = "textBoxTradeInAllowance";
+            this.textBoxTradeInAllowance.Size = new System.Drawing.Size(120, 27);
+            this.textBoxTradeInAllowance.TabIndex = 0;
             // 
-            // textBox5
+            // textBoxTotal
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(164, 130);
-            this.textBox5.MaximumSize = new System.Drawing.Size(120, 27);
-            this.textBox5.MinimumSize = new System.Drawing.Size(120, 27);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(120, 27);
-            this.textBox5.TabIndex = 0;
+            this.textBoxTotal.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTotal.Enabled = false;
+            this.textBoxTotal.Location = new System.Drawing.Point(164, 130);
+            this.textBoxTotal.MaximumSize = new System.Drawing.Size(120, 27);
+            this.textBoxTotal.MinimumSize = new System.Drawing.Size(120, 27);
+            this.textBoxTotal.Name = "textBoxTotal";
+            this.textBoxTotal.ReadOnly = true;
+            this.textBoxTotal.Size = new System.Drawing.Size(120, 27);
+            this.textBoxTotal.TabIndex = 0;
             // 
-            // textBox4
+            // textBoxSalesTax_8
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(164, 97);
-            this.textBox4.MaximumSize = new System.Drawing.Size(120, 27);
-            this.textBox4.MinimumSize = new System.Drawing.Size(120, 27);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(120, 27);
-            this.textBox4.TabIndex = 0;
+            this.textBoxSalesTax_8.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxSalesTax_8.Enabled = false;
+            this.textBoxSalesTax_8.Location = new System.Drawing.Point(164, 97);
+            this.textBoxSalesTax_8.MaximumSize = new System.Drawing.Size(120, 27);
+            this.textBoxSalesTax_8.MinimumSize = new System.Drawing.Size(120, 27);
+            this.textBoxSalesTax_8.Name = "textBoxSalesTax_8";
+            this.textBoxSalesTax_8.ReadOnly = true;
+            this.textBoxSalesTax_8.Size = new System.Drawing.Size(120, 27);
+            this.textBoxSalesTax_8.TabIndex = 0;
             // 
-            // textBox3
+            // textBoxSubtotal
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(164, 64);
-            this.textBox3.MaximumSize = new System.Drawing.Size(120, 27);
-            this.textBox3.MinimumSize = new System.Drawing.Size(120, 27);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(120, 27);
-            this.textBox3.TabIndex = 0;
+            this.textBoxSubtotal.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxSubtotal.Enabled = false;
+            this.textBoxSubtotal.Location = new System.Drawing.Point(164, 64);
+            this.textBoxSubtotal.MaximumSize = new System.Drawing.Size(120, 27);
+            this.textBoxSubtotal.MinimumSize = new System.Drawing.Size(120, 27);
+            this.textBoxSubtotal.Name = "textBoxSubtotal";
+            this.textBoxSubtotal.ReadOnly = true;
+            this.textBoxSubtotal.Size = new System.Drawing.Size(120, 27);
+            this.textBoxSubtotal.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxAccessoriesFinish
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(164, 31);
-            this.textBox2.MaximumSize = new System.Drawing.Size(120, 27);
-            this.textBox2.MinimumSize = new System.Drawing.Size(120, 27);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(120, 27);
-            this.textBox2.TabIndex = 0;
+            this.textBoxAccessoriesFinish.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxAccessoriesFinish.Enabled = false;
+            this.textBoxAccessoriesFinish.Location = new System.Drawing.Point(164, 31);
+            this.textBoxAccessoriesFinish.MaximumSize = new System.Drawing.Size(120, 27);
+            this.textBoxAccessoriesFinish.MinimumSize = new System.Drawing.Size(120, 27);
+            this.textBoxAccessoriesFinish.Name = "textBoxAccessoriesFinish";
+            this.textBoxAccessoriesFinish.ReadOnly = true;
+            this.textBoxAccessoriesFinish.Size = new System.Drawing.Size(120, 27);
+            this.textBoxAccessoriesFinish.TabIndex = 0;
             // 
-            // textBox1
+            // textBoxCarSSalesPrice
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 0);
-            this.textBox1.MaximumSize = new System.Drawing.Size(120, 27);
-            this.textBox1.MinimumSize = new System.Drawing.Size(120, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 27);
-            this.textBox1.TabIndex = 0;
+            this.textBoxCarSSalesPrice.Location = new System.Drawing.Point(164, 0);
+            this.textBoxCarSSalesPrice.MaximumSize = new System.Drawing.Size(120, 27);
+            this.textBoxCarSSalesPrice.MinimumSize = new System.Drawing.Size(120, 27);
+            this.textBoxCarSSalesPrice.Name = "textBoxCarSSalesPrice";
+            this.textBoxCarSSalesPrice.Size = new System.Drawing.Size(120, 27);
+            this.textBoxCarSSalesPrice.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
@@ -367,11 +367,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 383);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonPrintForm);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.buttonCalculate);
+            this.Controls.Add(this.radioButtonCarExteriorFinish);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -379,8 +379,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.radioButtonCarExteriorFinish.ResumeLayout(false);
+            this.radioButtonCarExteriorFinish.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -390,33 +390,33 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBoxComputerNavigation;
+        private System.Windows.Forms.CheckBox checkBoxLeatherInterior;
         private System.Windows.Forms.CheckBox checkBoxStereoSystem;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.GroupBox radioButtonCarExteriorFinish;
+        private System.Windows.Forms.RadioButton radioButtonCustomizedDetailing;
+        private System.Windows.Forms.RadioButton radioButtonPearlized;
+        private System.Windows.Forms.RadioButton radioButtonStandard;
+        private System.Windows.Forms.Button buttonCalculate;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonPrintForm;
+        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxCarSSalesPrice;
+        private System.Windows.Forms.TextBox textBoxAccessoriesFinish;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxSubtotal;
+        private System.Windows.Forms.Label labelAmountDue;
+        private System.Windows.Forms.Label labelTradeInAllowance;
+        private System.Windows.Forms.Label labelTotal;
+        private System.Windows.Forms.Label labelSalesTax_8;
+        private System.Windows.Forms.Label labelSubtotal;
+        private System.Windows.Forms.Label labelAccessoriesFinish;
+        private System.Windows.Forms.Label labelCarSSalesPrice;
+        private System.Windows.Forms.TextBox textBoxAmountDue;
+        private System.Windows.Forms.TextBox textBoxTradeInAllowance;
+        private System.Windows.Forms.TextBox textBoxTotal;
+        private System.Windows.Forms.TextBox textBoxSalesTax_8;
     }
 }
 
