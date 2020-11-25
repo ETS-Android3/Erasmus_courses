@@ -288,6 +288,7 @@
             this.textBoxAmountDue.ReadOnly = true;
             this.textBoxAmountDue.Size = new System.Drawing.Size(120, 27);
             this.textBoxAmountDue.TabIndex = 0;
+            this.textBoxAmountDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxTradeInAllowance
             // 
@@ -297,6 +298,8 @@
             this.textBoxTradeInAllowance.Name = "textBoxTradeInAllowance";
             this.textBoxTradeInAllowance.Size = new System.Drawing.Size(120, 27);
             this.textBoxTradeInAllowance.TabIndex = 0;
+            this.textBoxTradeInAllowance.Text = "0";
+            this.textBoxTradeInAllowance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxTotal
             // 
@@ -309,6 +312,7 @@
             this.textBoxTotal.ReadOnly = true;
             this.textBoxTotal.Size = new System.Drawing.Size(120, 27);
             this.textBoxTotal.TabIndex = 0;
+            this.textBoxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxSalesTax_8
             // 
@@ -321,6 +325,7 @@
             this.textBoxSalesTax_8.ReadOnly = true;
             this.textBoxSalesTax_8.Size = new System.Drawing.Size(120, 27);
             this.textBoxSalesTax_8.TabIndex = 0;
+            this.textBoxSalesTax_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxSubtotal
             // 
@@ -333,6 +338,7 @@
             this.textBoxSubtotal.ReadOnly = true;
             this.textBoxSubtotal.Size = new System.Drawing.Size(120, 27);
             this.textBoxSubtotal.TabIndex = 0;
+            this.textBoxSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxAccessoriesFinish
             // 
@@ -345,6 +351,7 @@
             this.textBoxAccessoriesFinish.ReadOnly = true;
             this.textBoxAccessoriesFinish.Size = new System.Drawing.Size(120, 27);
             this.textBoxAccessoriesFinish.TabIndex = 0;
+            this.textBoxAccessoriesFinish.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxCarSSalesPrice
             // 
@@ -354,6 +361,7 @@
             this.textBoxCarSSalesPrice.Name = "textBoxCarSSalesPrice";
             this.textBoxCarSSalesPrice.Size = new System.Drawing.Size(120, 27);
             this.textBoxCarSSalesPrice.TabIndex = 0;
+            this.textBoxCarSSalesPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // contextMenuStrip1
             // 
