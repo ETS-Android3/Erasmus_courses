@@ -19,3 +19,5 @@ Sales Tax(8%):              labelSalesTax_8      textBoxSalesTax_8
 Total:                      labelTotal      textBoxTotal
 Trade-in Allowance:         labelTradeInAllowance      textBoxTradeInAllowance
 Amount Due:                 labelAmountDue      textBoxAmountDue
+
+Choosen Accessories
