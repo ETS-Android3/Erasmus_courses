@@ -166,7 +166,7 @@
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(130, 62);
             this.buttonCalculate.TabIndex = 2;
-            this.buttonCalculate.Text = "Calculate";
+            this.buttonCalculate.Text = "&Calculate";
             this.buttonCalculate.UseVisualStyleBackColor = true;
             this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
@@ -176,7 +176,7 @@
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(130, 62);
             this.buttonClear.TabIndex = 2;
-            this.buttonClear.Text = "Clear";
+            this.buttonClear.Text = "C&lear";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
@@ -186,7 +186,7 @@
             this.buttonPrintForm.Name = "buttonPrintForm";
             this.buttonPrintForm.Size = new System.Drawing.Size(130, 62);
             this.buttonPrintForm.TabIndex = 2;
-            this.buttonPrintForm.Text = "Print Form";
+            this.buttonPrintForm.Text = "&Print Form";
             this.buttonPrintForm.UseVisualStyleBackColor = true;
             this.buttonPrintForm.Click += new System.EventHandler(this.buttonPrintForm_Click);
             // 
@@ -196,7 +196,7 @@
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(130, 62);
             this.buttonExit.TabIndex = 2;
-            this.buttonExit.Text = "Exit";
+            this.buttonExit.Text = "E&xit";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
@@ -392,13 +392,13 @@
             this.toolStripMenuItemExit});
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
             this.toolStripMenuItemFile.Size = new System.Drawing.Size(46, 24);
-            this.toolStripMenuItemFile.Text = "File";
+            this.toolStripMenuItemFile.Text = "&File";
             // 
             // toolStripMenuItemPrintForm
             // 
             this.toolStripMenuItemPrintForm.Name = "toolStripMenuItemPrintForm";
             this.toolStripMenuItemPrintForm.Size = new System.Drawing.Size(160, 26);
-            this.toolStripMenuItemPrintForm.Text = "Print Form";
+            this.toolStripMenuItemPrintForm.Text = "&Print Form";
             this.toolStripMenuItemPrintForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolStripMenuItemPrintForm.Click += new System.EventHandler(this.buttonPrintForm_Click);
             // 
@@ -406,7 +406,7 @@
             // 
             this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
             this.toolStripMenuItemExit.Size = new System.Drawing.Size(160, 26);
-            this.toolStripMenuItemExit.Text = "Exit";
+            this.toolStripMenuItemExit.Text = "E&xit";
             this.toolStripMenuItemExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // menuStrip1
@@ -429,20 +429,20 @@
             this.toolStripMenuItemClear});
             this.toolStripMenuItemEdit.Name = "toolStripMenuItemEdit";
             this.toolStripMenuItemEdit.Size = new System.Drawing.Size(49, 24);
-            this.toolStripMenuItemEdit.Text = "Edit";
+            this.toolStripMenuItemEdit.Text = "&Edit";
             // 
             // toolStripMenuItemCalculate
             // 
             this.toolStripMenuItemCalculate.Name = "toolStripMenuItemCalculate";
             this.toolStripMenuItemCalculate.Size = new System.Drawing.Size(153, 26);
-            this.toolStripMenuItemCalculate.Text = "Calculate";
+            this.toolStripMenuItemCalculate.Text = "&Calculate";
             this.toolStripMenuItemCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // toolStripMenuItemClear
             // 
             this.toolStripMenuItemClear.Name = "toolStripMenuItemClear";
             this.toolStripMenuItemClear.Size = new System.Drawing.Size(153, 26);
-            this.toolStripMenuItemClear.Text = "Clear";
+            this.toolStripMenuItemClear.Text = "C&lear";
             this.toolStripMenuItemClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // toolStripMenuItemHelp
@@ -451,13 +451,13 @@
             this.toolStripMenuItemAbout});
             this.toolStripMenuItemHelp.Name = "toolStripMenuItemHelp";
             this.toolStripMenuItemHelp.Size = new System.Drawing.Size(55, 24);
-            this.toolStripMenuItemHelp.Text = "Help";
+            this.toolStripMenuItemHelp.Text = "&Help";
             // 
             // toolStripMenuItemAbout
             // 
             this.toolStripMenuItemAbout.Name = "toolStripMenuItemAbout";
             this.toolStripMenuItemAbout.Size = new System.Drawing.Size(133, 26);
-            this.toolStripMenuItemAbout.Text = "About";
+            this.toolStripMenuItemAbout.Text = "&About";
             this.toolStripMenuItemAbout.Click += new System.EventHandler(this.helpAbout_Click);
             // 
             // toolStripMenuItem2
