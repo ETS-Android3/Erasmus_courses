@@ -41,40 +41,20 @@ namespace AutoCenter
 
         }
 
-        private void helpAbout_Click(object sender, EventArgs e)
+        private void menuItemHelpAbout_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This section is about App and Author", "About");
         }
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
             clearDataAndWindow();
-            calculate();
+            calculateData();
         }
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            clearData();
-            getDataFromForms();
-            calculate();
-        }
-        private void getDataFromForms()
-        {
-            getDataFromCarSSalesPrice();
-            getDataFromTradeInAllowance();
-        }
-
-        private void getDataFromCarSSalesPrice()
-        {
-            try
-            {
-                this.textBoxCarSSalesPrice.Text = this.textBoxCarSSalesPrice.Text.Replace('.', ',');
-                this.carSalesPrice = float.Parse(this.textBoxCarSSalesPrice.Text);
-            }
-            catch (Exception e)
-            {
-                this.textBoxCarSSalesPrice.Text = "0";
-                parsingMessageBox();
-            }
+            cleanGetCalculateData();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
@@ -84,25 +64,42 @@ namespace AutoCenter
 
         private void buttonPrintForm_Click(object sender, EventArgs e)
         {
-
-            buttonCalculate_Click(sender, e);
+            cleanGetCalculateData();
             preparePrintData();
-            printToolStripMenuItem_Click(sender, e);
+            // Print dialog lets user select a print, number of copies, start page, etc.
+            // To keep it simple we have ignored all of these settings
+            // and assume the items in list box will fit on one page .
+            DialogResult result = printDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                // Assign all of the settings from the print dialog to the document.
+                printDocument1.PrinterSettings = printDialog1.PrinterSettings;
+                // Calling print executes the code in printDocument1_PrintPage
+                printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+                printDocument1.Print();
+            }
+
         }
 
-        private void getDataFromTradeInAllowance()
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            try
+            Graphics page = e.Graphics;
+            Font defaultPrintFont = new Font(this.Font.FontFamily, 16);
+            SolidBrush solidBrush = new SolidBrush(Color.Black);
+            int xpos = 50;
+            int ypos = 80;
+            foreach (PrintLine line in printLines)
             {
-                this.textBoxTradeInAllowance.Text = this.textBoxTradeInAllowance.Text.Replace('.', ',');
-                this.tradeInAllowance = float.Parse(this.textBoxTradeInAllowance.Text);
-            }
-            catch (Exception e)
-            {
-                this.textBoxTradeInAllowance.Text = "0";
-                parsingMessageBox();
+                page.DrawString(line.Text, line.Font, solidBrush, xpos, ypos, line.Format);
+                ypos += line.Font.Height + 3;
             }
         }
+
+
+        /// <summary>
+        /// Helper Functions
+        /// </summary>
+
         private void clearData()
         {
             this.carSalesPrice = 0;
@@ -113,6 +110,7 @@ namespace AutoCenter
             this.total = 0;
             this.tradeInAllowance = 0;
         }
+        
         private void clearDataAndWindow()
         {
             clearData();
@@ -123,7 +121,42 @@ namespace AutoCenter
             this.textBoxCarSSalesPrice.Text = "0";
             this.textBoxTradeInAllowance.Text = "0";
         }
-        private void calculate()
+        
+        private void getDataFromCarSSalesPrice()
+        {
+            try
+            {
+                this.textBoxCarSSalesPrice.Text = this.textBoxCarSSalesPrice.Text.Replace('.', ',');
+                this.carSalesPrice = float.Parse(this.textBoxCarSSalesPrice.Text);
+            }
+            catch (Exception e)
+            {
+                this.textBoxCarSSalesPrice.Text = "0";
+                parsingErrorMessageBox();
+            }
+        }
+        
+        private void getDataFromTradeInAllowance()
+        {
+            try
+            {
+                this.textBoxTradeInAllowance.Text = this.textBoxTradeInAllowance.Text.Replace('.', ',');
+                this.tradeInAllowance = float.Parse(this.textBoxTradeInAllowance.Text);
+            }
+            catch (Exception e)
+            {
+                this.textBoxTradeInAllowance.Text = "0";
+                parsingErrorMessageBox();
+            }
+        }
+        
+        private void getDataFromForms()
+        {
+            getDataFromCarSSalesPrice();
+            getDataFromTradeInAllowance();
+        }
+        
+        private void calculateData()
         {
             if (this.checkBoxStereoSystem.Checked)
             {
@@ -156,42 +189,14 @@ namespace AutoCenter
             this.textBoxTotal.Text = this.total.ToString("0.00");
             this.textBoxAmountDue.Text = this.amount.ToString("0.00");
         }
-        private void parsingMessageBox()
+        
+        private void cleanGetCalculateData()
         {
-            MessageBox.Show("Input data should be float", "Parsing error");
+            clearData();
+            getDataFromForms();
+            calculateData();
         }
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            Graphics page = e.Graphics;
-            Font defaultPrintFont = new Font(this.Font.FontFamily, 16);
-            SolidBrush solidBrush = new SolidBrush(Color.Black);
-            int xpos = 50;
-            int ypos = 80;
-            foreach (PrintLine line in printLines)
-            {
-                page.DrawString(line.Text, line.Font, solidBrush, xpos, ypos, line.Format);
-                ypos += line.Font.Height + 3;
-            }
-        }
-
-        private void printToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            // Print dialog lets user select a print, number of copies, start page, etc.
-            // To keep it simple we have ignored all of these settings
-            // and assume the items in list box will fit on one page .
-            DialogResult result = printDialog1.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                // Assign all of the settings from the print dialog to the document.
-                printDocument1.PrinterSettings = printDialog1.PrinterSettings;
-                // Calling print executes the code in printDocument1_PrintPage
-                printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-                printDocument1.Print();
-            }
-
-        }
-
+        
         private void preparePrintData()
         {
             printLines = new List<PrintLine>();
@@ -322,5 +327,12 @@ namespace AutoCenter
             printLine = new PrintLine("_ - not selected option", heading2PrintFont, heading2PrintStringFormat);
             printLines.Add(printLine);
         }
+
+        private void parsingErrorMessageBox()
+        {
+            MessageBox.Show("Input data should be float", "Parsing error");
+        }
+
+
     }
 }

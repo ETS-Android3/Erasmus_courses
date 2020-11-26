@@ -460,7 +460,7 @@
             this.toolStripMenuItemAbout.Name = "toolStripMenuItemAbout";
             this.toolStripMenuItemAbout.Size = new System.Drawing.Size(133, 26);
             this.toolStripMenuItemAbout.Text = "&About";
-            this.toolStripMenuItemAbout.Click += new System.EventHandler(this.helpAbout_Click);
+            this.toolStripMenuItemAbout.Click += new System.EventHandler(this.menuItemHelpAbout_Click);
             // 
             // toolStripMenuItem2
             // 
