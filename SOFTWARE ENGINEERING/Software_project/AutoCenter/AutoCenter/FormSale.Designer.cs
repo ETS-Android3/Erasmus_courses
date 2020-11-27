@@ -1,6 +1,6 @@
 ﻿namespace AutoCenter
 {
-    partial class Form1
+    partial class FormSale
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSale));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBoxComputerNavigation = new System.Windows.Forms.CheckBox();
             this.checkBoxLeatherInterior = new System.Windows.Forms.CheckBox();
@@ -484,7 +484,7 @@
             this.printDialog1.AllowSomePages = true;
             this.printDialog1.UseEXDialog = true;
             // 
-            // Form1
+            // FormSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -499,7 +499,7 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "FormSale";
             this.Text = "Auto Center";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

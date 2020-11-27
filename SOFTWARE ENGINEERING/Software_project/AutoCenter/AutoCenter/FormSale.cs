@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AutoCenter
 {
-    public partial class Form1 : Form
+    public partial class FormSale : Form
     {
         public class PrintLine
         {
@@ -29,10 +29,10 @@ namespace AutoCenter
         float carSalesPrice, accessoriesFinish, subtotal;
         float amount, tax8, total, tradeInAllowance;
         List<PrintLine> printLines = new List<PrintLine>();
-        public Form2 formMain;
+        public FormMain formMain;
 
 
-        public Form1()
+        public FormSale()
         {
             InitializeComponent();
         }

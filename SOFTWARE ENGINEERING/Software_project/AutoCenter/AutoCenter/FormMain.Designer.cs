@@ -1,6 +1,6 @@
 ﻿namespace AutoCenter
 {
-    partial class Form2
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemInputSale = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemCarWash = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemColour = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +44,7 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.buttonInputSale = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonCarWash = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +65,7 @@
             // 
             this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemInputSale,
+            this.toolStripMenuItemCarWash,
             this.toolStripMenuItemExit});
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
             this.toolStripMenuItemFile.Size = new System.Drawing.Size(46, 24);
@@ -74,6 +77,13 @@
             this.toolStripMenuItemInputSale.Size = new System.Drawing.Size(158, 26);
             this.toolStripMenuItemInputSale.Text = "Input &Sale";
             this.toolStripMenuItemInputSale.Click += new System.EventHandler(this.toolStripMenuItemInputSale_Click);
+            // 
+            // toolStripMenuItemCarWash
+            // 
+            this.toolStripMenuItemCarWash.Name = "toolStripMenuItemCarWash";
+            this.toolStripMenuItemCarWash.Size = new System.Drawing.Size(158, 26);
+            this.toolStripMenuItemCarWash.Text = "CarWash";
+            this.toolStripMenuItemCarWash.Click += new System.EventHandler(this.toolStripMenuItemCarWash_Click);
             // 
             // toolStripMenuItemExit
             // 
@@ -154,18 +164,29 @@
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
             // 
-            // Form2
+            // buttonCarWash
+            // 
+            this.buttonCarWash.Location = new System.Drawing.Point(308, 321);
+            this.buttonCarWash.Name = "buttonCarWash";
+            this.buttonCarWash.Size = new System.Drawing.Size(173, 76);
+            this.buttonCarWash.TabIndex = 2;
+            this.buttonCarWash.Text = "Car Wash";
+            this.buttonCarWash.UseVisualStyleBackColor = true;
+            this.buttonCarWash.Click += new System.EventHandler(this.toolStripMenuItemCarWash_Click);
+            // 
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonCarWash);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonInputSale);
             this.Controls.Add(this.labelBanner);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form2";
+            this.Name = "FormMain";
             this.Text = "AutoCenter Wizard";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -190,5 +211,7 @@
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Button buttonInputSale;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCarWash;
+        private System.Windows.Forms.Button buttonCarWash;
     }
 }

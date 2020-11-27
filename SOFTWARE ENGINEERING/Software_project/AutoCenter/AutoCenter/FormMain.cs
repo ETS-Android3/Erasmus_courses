@@ -8,10 +8,11 @@ using System.Windows.Forms;
 
 namespace AutoCenter
 {
-    public partial class Form2 : Form
+    public partial class FormMain : Form
     {
-        public Form1 formInputSale;
-        public Form2()
+        public FormSale formSale;
+        public FormCarWash formCarWash;
+        public FormMain()
         {
             InitializeComponent();
         }
@@ -24,12 +25,23 @@ namespace AutoCenter
         private void toolStripMenuItemInputSale_Click(object sender, EventArgs e)
         {
             this.Hide();
-            if(formInputSale == null)
+            if(formSale == null)
             {
-                formInputSale = new Form1();
+                formSale = new FormSale();
             }
-            formInputSale.formMain = this;
-            formInputSale.Show();
+            formSale.formMain = this;
+            formSale.Show();
+        }
+
+        private void toolStripMenuItemCarWash_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            if (formCarWash == null)
+            {
+                formCarWash = new FormCarWash();
+            }
+            //formCarWash.formMain = this;
+            formCarWash.Show();
         }
 
         private void toolStripMenuItemColour_Click(object sender, EventArgs e)
