@@ -501,6 +501,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormSale";
             this.Text = "Auto Center";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.buttonExit_Click);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

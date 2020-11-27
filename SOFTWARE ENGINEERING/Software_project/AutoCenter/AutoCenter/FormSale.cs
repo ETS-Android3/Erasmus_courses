@@ -12,23 +12,10 @@ namespace AutoCenter
 {
     public partial class FormSale : Form
     {
-        public class PrintLine
-        {
-            public String Text;
-            public Font Font;
-            public StringFormat Format;
 
-            public PrintLine(String text, Font font, StringFormat format)
-            {
-                this.Text = text;
-                this.Font = font;
-                this.Format = format;
-            }
-        }
-
+        public PrintTool printTool;
         float carSalesPrice, accessoriesFinish, subtotal;
         float amount, tax8, total, tradeInAllowance;
-        List<PrintLine> printLines = new List<PrintLine>();
         public FormMain formMain;
 
 
@@ -82,24 +69,10 @@ namespace AutoCenter
                 // Assign all of the settings from the print dialog to the document.
                 printDocument1.PrinterSettings = printDialog1.PrinterSettings;
                 // Calling print executes the code in printDocument1_PrintPage
-                printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+                printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(printTool.printDocument1_PrintPage);
                 printDocument1.Print();
             }
 
-        }
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            Graphics page = e.Graphics;
-            Font defaultPrintFont = new Font(this.Font.FontFamily, 16);
-            SolidBrush solidBrush = new SolidBrush(Color.Black);
-            int xpos = 50;
-            int ypos = 80;
-            foreach (PrintLine line in printLines)
-            {
-                page.DrawString(line.Text, line.Font, solidBrush, xpos, ypos, line.Format);
-                ypos += line.Font.Height + 3;
-            }
         }
 
 
@@ -206,7 +179,7 @@ namespace AutoCenter
         
         private void preparePrintData()
         {
-            printLines = new List<PrintLine>();
+            printTool.printLines = new List<PrintLine>();
 
             Font titlePrintFont = new Font(this.Font.FontFamily, 20);
             StringFormat titlePrintStringFormat = new StringFormat();
@@ -223,9 +196,9 @@ namespace AutoCenter
             PrintLine separatorH3Line = new PrintLine("\n", heading3PrintFont, heading3PrintStringFormat);
             PrintLine printLine;
             printLine = new PrintLine("AutoCenter company", titlePrintFont, titlePrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine("Choosen Accessories", heading1PrintFont, heading1PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine("", heading2PrintFont, heading2PrintStringFormat);
             if (checkBoxStereoSystem.Checked)
             {
@@ -236,7 +209,7 @@ namespace AutoCenter
                 printLine.Text += "_ - ";
             }
             printLine.Text += checkBoxStereoSystem.Text;
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
 
             printLine = new PrintLine("", heading2PrintFont, heading2PrintStringFormat);
             if (checkBoxLeatherInterior.Checked)
@@ -248,7 +221,7 @@ namespace AutoCenter
                 printLine.Text += "_ - ";
             }
             printLine.Text += checkBoxLeatherInterior.Text;
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
 
 
             printLine = new PrintLine("", heading2PrintFont, heading2PrintStringFormat);
@@ -261,13 +234,13 @@ namespace AutoCenter
                 printLine.Text += "_ - ";
             }
             printLine.Text += checkBoxComputerNavigation.Text;
-            printLines.Add(printLine);
-            printLines.Add(separatorH2Line);
+            printTool.printLines.Add(printLine);
+            printTool.printLines.Add(separatorH2Line);
 
             ///////////////////////////////////////////////////////////
 
             printLine = new PrintLine("Car Exterior Finish", heading1PrintFont, heading1PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
 
             printLine = new PrintLine("", heading2PrintFont, heading2PrintStringFormat);
             if (radioButtonStandard.Checked)
@@ -279,7 +252,7 @@ namespace AutoCenter
                 printLine.Text += "_ - ";
             }
             printLine.Text += radioButtonStandard.Text;
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
 
             printLine = new PrintLine("", heading2PrintFont, heading2PrintStringFormat);
             if (radioButtonPearlized.Checked)
@@ -291,7 +264,7 @@ namespace AutoCenter
                 printLine.Text += "_ - ";
             }
             printLine.Text += radioButtonPearlized.Text;
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
 
 
             printLine = new PrintLine("", heading2PrintFont, heading2PrintStringFormat);
@@ -304,35 +277,35 @@ namespace AutoCenter
                 printLine.Text += "_ - ";
             }
             printLine.Text += radioButtonCustomizedDetailing.Text;
-            printLines.Add(printLine);
-            printLines.Add(separatorH2Line);
+            printTool.printLines.Add(printLine);
+            printTool.printLines.Add(separatorH2Line);
 
             ///////////////////////////////////////////////////////////
             printLine = new PrintLine("Calculations", heading1PrintFont, heading1PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine(this.labelCarSSalesPrice.Text+" "+this.textBoxCarSSalesPrice.Text, heading2PrintFont, heading2PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine(this.labelAccessoriesFinish.Text + " " + this.textBoxAccessoriesFinish.Text, heading2PrintFont, heading2PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine(this.labelSubtotal.Text + " " + this.textBoxSubtotal.Text, heading2PrintFont, heading2PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine(this.labelSalesTax_8.Text + " " + this.textBoxSalesTax_8.Text, heading2PrintFont, heading2PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine(this.labelTotal.Text + " " + this.textBoxTotal.Text, heading2PrintFont, heading2PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine(this.labelTradeInAllowance.Text + " " + this.textBoxTradeInAllowance.Text, heading2PrintFont, heading2PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine(this.labelAmountDue.Text + " " + this.textBoxAmountDue.Text, heading2PrintFont, heading2PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             ///////////////////////////////////////////////////////////
-            printLines.Add(separatorTLine);
+            printTool.printLines.Add(separatorTLine);
             printLine = new PrintLine("Legend", heading1PrintFont, heading1PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
 
             printLine = new PrintLine("x - selected option", heading2PrintFont, heading2PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
             printLine = new PrintLine("_ - not selected option", heading2PrintFont, heading2PrintStringFormat);
-            printLines.Add(printLine);
+            printTool.printLines.Add(printLine);
         }
 
         private void parsingErrorMessageBox()
