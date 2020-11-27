@@ -29,6 +29,7 @@ namespace AutoCenter
         float carSalesPrice, accessoriesFinish, subtotal;
         float amount, tax8, total, tradeInAllowance;
         List<PrintLine> printLines = new List<PrintLine>();
+        public Form2 formMain;
 
 
         public Form1()
@@ -43,7 +44,13 @@ namespace AutoCenter
 
         private void menuItemHelpAbout_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This section is about App and Author", "About");
+            MessageBox.Show("AutoCenter is an App that can help seller with calculating cost of Client's car", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void menuItemHelpGoBackToMainWizard_Click(object sender, EventArgs e)
+        {
+            this.formMain.Show();
+            this.Hide();
         }
 
         private void buttonClear_Click(object sender, EventArgs e)

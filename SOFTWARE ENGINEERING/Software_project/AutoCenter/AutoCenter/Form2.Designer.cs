@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemInputSale = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,6 +38,11 @@
             this.toolStripMenuItemFont = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelBanner = new System.Windows.Forms.Label();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.buttonInputSale = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,12 +73,14 @@
             this.toolStripMenuItemInputSale.Name = "toolStripMenuItemInputSale";
             this.toolStripMenuItemInputSale.Size = new System.Drawing.Size(158, 26);
             this.toolStripMenuItemInputSale.Text = "Input &Sale";
+            this.toolStripMenuItemInputSale.Click += new System.EventHandler(this.toolStripMenuItemInputSale_Click);
             // 
             // toolStripMenuItemExit
             // 
             this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
             this.toolStripMenuItemExit.Size = new System.Drawing.Size(158, 26);
             this.toolStripMenuItemExit.Text = "E&xit";
+            this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
             // 
             // toolStripMenuItemEdit
             // 
@@ -88,12 +96,14 @@
             this.toolStripMenuItemColour.Name = "toolStripMenuItemColour";
             this.toolStripMenuItemColour.Size = new System.Drawing.Size(136, 26);
             this.toolStripMenuItemColour.Text = "&Colour";
+            this.toolStripMenuItemColour.Click += new System.EventHandler(this.toolStripMenuItemColour_Click);
             // 
             // toolStripMenuItemFont
             // 
             this.toolStripMenuItemFont.Name = "toolStripMenuItemFont";
             this.toolStripMenuItemFont.Size = new System.Drawing.Size(136, 26);
             this.toolStripMenuItemFont.Text = "&Font";
+            this.toolStripMenuItemFont.Click += new System.EventHandler(this.toolStripMenuItemFont_Click);
             // 
             // toolStripMenuItemHelp
             // 
@@ -108,16 +118,55 @@
             this.toolStripMenuItemAbout.Name = "toolStripMenuItemAbout";
             this.toolStripMenuItemAbout.Size = new System.Drawing.Size(133, 26);
             this.toolStripMenuItemAbout.Text = "&About";
+            this.toolStripMenuItemAbout.Click += new System.EventHandler(this.menuItemHelpAbout_Click);
+            // 
+            // labelBanner
+            // 
+            this.labelBanner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelBanner.AutoSize = true;
+            this.labelBanner.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelBanner.Location = new System.Drawing.Point(12, 123);
+            this.labelBanner.MaximumSize = new System.Drawing.Size(800, 0);
+            this.labelBanner.Name = "labelBanner";
+            this.labelBanner.Size = new System.Drawing.Size(772, 114);
+            this.labelBanner.TabIndex = 1;
+            this.labelBanner.Text = "Valley Boulevard Auto Centre - meeting all your vehicles need\'s";
+            // 
+            // buttonInputSale
+            // 
+            this.buttonInputSale.Location = new System.Drawing.Point(117, 321);
+            this.buttonInputSale.Name = "buttonInputSale";
+            this.buttonInputSale.Size = new System.Drawing.Size(173, 76);
+            this.buttonInputSale.TabIndex = 2;
+            this.buttonInputSale.Text = "Input Sale";
+            this.buttonInputSale.UseVisualStyleBackColor = true;
+            this.buttonInputSale.Click += new System.EventHandler(this.toolStripMenuItemInputSale_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Location = new System.Drawing.Point(500, 321);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(173, 76);
+            this.buttonExit.TabIndex = 2;
+            this.buttonExit.Text = "Exit";
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonInputSale);
+            this.Controls.Add(this.labelBanner);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "AutoCenter Wizard";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -136,5 +185,10 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFont;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHelp;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAbout;
+        private System.Windows.Forms.Label labelBanner;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.Button buttonInputSale;
+        private System.Windows.Forms.Button buttonExit;
     }
 }

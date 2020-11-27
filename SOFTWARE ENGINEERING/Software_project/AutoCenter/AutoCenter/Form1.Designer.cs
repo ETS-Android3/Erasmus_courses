@@ -60,6 +60,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemPrintForm = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemGoBackToMainWizard = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -391,6 +392,7 @@
             // 
             this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemPrintForm,
+            this.toolStripMenuItemGoBackToMainWizard,
             this.toolStripMenuItemExit});
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
             this.toolStripMenuItemFile.Size = new System.Drawing.Size(46, 24);
@@ -399,15 +401,22 @@
             // toolStripMenuItemPrintForm
             // 
             this.toolStripMenuItemPrintForm.Name = "toolStripMenuItemPrintForm";
-            this.toolStripMenuItemPrintForm.Size = new System.Drawing.Size(160, 26);
+            this.toolStripMenuItemPrintForm.Size = new System.Drawing.Size(254, 26);
             this.toolStripMenuItemPrintForm.Text = "&Print Form";
             this.toolStripMenuItemPrintForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolStripMenuItemPrintForm.Click += new System.EventHandler(this.buttonPrintForm_Click);
             // 
+            // toolStripMenuItemGoBackToMainWizard
+            // 
+            this.toolStripMenuItemGoBackToMainWizard.Name = "toolStripMenuItemGoBackToMainWizard";
+            this.toolStripMenuItemGoBackToMainWizard.Size = new System.Drawing.Size(254, 26);
+            this.toolStripMenuItemGoBackToMainWizard.Text = "Go Back To Main Wizard";
+            this.toolStripMenuItemGoBackToMainWizard.Click += new System.EventHandler(this.menuItemHelpGoBackToMainWizard_Click);
+            // 
             // toolStripMenuItemExit
             // 
             this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
-            this.toolStripMenuItemExit.Size = new System.Drawing.Size(160, 26);
+            this.toolStripMenuItemExit.Size = new System.Drawing.Size(254, 26);
             this.toolStripMenuItemExit.Text = "E&xit";
             this.toolStripMenuItemExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
@@ -548,6 +557,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAbout;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemGoBackToMainWizard;
     }
 }
 
