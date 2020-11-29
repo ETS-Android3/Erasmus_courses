@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using System;
+using System.IO;
 
 namespace AutoCenter
 {
@@ -175,6 +178,7 @@ namespace AutoCenter
             clearData();
             getDataFromForms();
             calculateData();
+            saveToXml();
         }
         
         private void preparePrintData()
@@ -313,6 +317,21 @@ namespace AutoCenter
             MessageBox.Show("Input data should be float", "Parsing error");
         }
 
+        private void saveToXml()
+        {
+            XElement root;
+            String file = "car_sales_history.xml";
+
+            if (File.Exists(file))
+                root = XElement.Load(file);
+            else
+                root = new XElement("Sales");
+
+            root.Add(new XElement("Sale",
+                     new XElement("timeStamp", DateTime.Now.ToString()),
+                     new XElement("src00", "True")));
+            root.Save(file);
+        }
 
     }
 }
