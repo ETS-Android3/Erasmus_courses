@@ -104,11 +104,11 @@
             // 
             // comboBoxBrand
             // 
-            this.comboBoxBrand.Items.AddRange(new string[] {
+            this.comboBoxBrand.FormattingEnabled = true;
+            this.comboBoxBrand.Items.AddRange(new object[] {
             "Brand A",
             "Brand B",
             "Brand X"});
-            this.comboBoxBrand.FormattingEnabled = true;
             this.comboBoxBrand.Location = new System.Drawing.Point(143, 64);
             this.comboBoxBrand.Name = "comboBoxBrand";
             this.comboBoxBrand.Size = new System.Drawing.Size(151, 28);
