@@ -45,6 +45,7 @@
             this.buttonInputSale = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonCarWash = new System.Windows.Forms.Button();
+            this.buttonSparkPlugs = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,7 +147,7 @@
             // 
             // buttonInputSale
             // 
-            this.buttonInputSale.Location = new System.Drawing.Point(117, 321);
+            this.buttonInputSale.Location = new System.Drawing.Point(37, 321);
             this.buttonInputSale.Name = "buttonInputSale";
             this.buttonInputSale.Size = new System.Drawing.Size(173, 76);
             this.buttonInputSale.TabIndex = 2;
@@ -156,7 +157,7 @@
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(500, 321);
+            this.buttonExit.Location = new System.Drawing.Point(602, 321);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(173, 76);
             this.buttonExit.TabIndex = 2;
@@ -166,7 +167,7 @@
             // 
             // buttonCarWash
             // 
-            this.buttonCarWash.Location = new System.Drawing.Point(308, 321);
+            this.buttonCarWash.Location = new System.Drawing.Point(225, 321);
             this.buttonCarWash.Name = "buttonCarWash";
             this.buttonCarWash.Size = new System.Drawing.Size(173, 76);
             this.buttonCarWash.TabIndex = 2;
@@ -174,11 +175,23 @@
             this.buttonCarWash.UseVisualStyleBackColor = true;
             this.buttonCarWash.Click += new System.EventHandler(this.toolStripMenuItemCarWash_Click);
             // 
+            // buttonSparkPlugs
+            // 
+            this.buttonSparkPlugs.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonSparkPlugs.Location = new System.Drawing.Point(414, 321);
+            this.buttonSparkPlugs.Name = "buttonSparkPlugs";
+            this.buttonSparkPlugs.Size = new System.Drawing.Size(173, 76);
+            this.buttonSparkPlugs.TabIndex = 2;
+            this.buttonSparkPlugs.Text = "Spark Plugs";
+            this.buttonSparkPlugs.UseVisualStyleBackColor = true;
+            this.buttonSparkPlugs.Click += new System.EventHandler(this.buttonSparkPlugs_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSparkPlugs);
             this.Controls.Add(this.buttonCarWash);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonInputSale);
@@ -213,5 +226,6 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCarWash;
         private System.Windows.Forms.Button buttonCarWash;
+        private System.Windows.Forms.Button buttonSparkPlugs;
     }
 }

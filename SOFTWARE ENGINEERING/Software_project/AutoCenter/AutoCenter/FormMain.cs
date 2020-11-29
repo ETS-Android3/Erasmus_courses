@@ -12,6 +12,8 @@ namespace AutoCenter
     {
         public FormSale formSale;
         public FormCarWash formCarWash;
+        public FormSparkPlugs formSparkPlugs;
+
         public FormMain()
         {
             InitializeComponent();
@@ -73,5 +75,15 @@ namespace AutoCenter
             MessageBox.Show("AutoCenter is an App that can help seller with calculating cost of Client's car", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void buttonSparkPlugs_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            if (formSparkPlugs == null)
+            {
+                formSparkPlugs = new FormSparkPlugs();
+            }
+            //formCarWash.formMain = this;
+            formSparkPlugs.Show();
+        }
     }
 }
