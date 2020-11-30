@@ -480,6 +480,7 @@
             this.Name = "FormSaleHistory";
             this.Text = "Auto Center";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.toolStripMenuItemGoBackToFormSale_Click);
+            this.Load += new System.EventHandler(this.FormSaleHistory_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.radioButtonCarExteriorFinish.ResumeLayout(false);

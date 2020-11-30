@@ -44,11 +44,8 @@ namespace AutoCenter
         private void menuItemHistory_Click(object sender, EventArgs e)
         {
             this.Hide();
-            if (formSaleHistory == null)
-            {
-                formSaleHistory = new FormSaleHistory();
-                formSaleHistory.formSale = this;
-            }
+            formSaleHistory = new FormSaleHistory();
+            formSaleHistory.formSale = this;
             formSaleHistory.Show();
 
         }
