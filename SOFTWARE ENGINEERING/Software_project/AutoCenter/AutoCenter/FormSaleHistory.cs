@@ -49,6 +49,8 @@ namespace AutoCenter
         public FormSaleHistory()
         {
             InitializeComponent();
+            currentIdx = -1;
+            readFromXml();
         }
 
         private void menuItemHelpAbout_Click(object sender, EventArgs e)
@@ -148,38 +150,40 @@ namespace AutoCenter
             int listSize = listOfSales.Count();
             if(listSize == 0)
             {
-                MessageBox.Show("No content in history. Application will return to sales window.", "History Empty");
-                goBackToFormSale_Click();
-            }
-            else if (idx < 0)
-            {
-                getElementFromList(listSize - 1);
-            } 
-            else if(idx >= listSize-1)
-            {
-                currentIdx = listSize - 1;
-                this.buttonNext.Hide();
-            } 
-            else if(idx == 0)
-            {
-                currentIdx = 0;
+                DialogResult result = MessageBox.Show("No content in history. You should return to sales window.", "History Empty");
                 this.buttonPrevious.Hide();
-            } 
+                this.buttonNext.Hide();
+            }
             else
             {
-                currentIdx = idx;
-                this.buttonPrevious.Show();
-                this.buttonNext.Show();
+                if (idx < 0)
+                {
+                    getElementFromList(listSize - 1);
+                } 
+                else if(idx >= listSize-1)
+                {
+                    currentIdx = listSize - 1;
+                    this.buttonNext.Hide();
+                } 
+                else if(idx == 0)
+                {
+                    currentIdx = 0;
+                    this.buttonPrevious.Hide();
+                } 
+                else
+                {
+                    currentIdx = idx;
+                    this.buttonPrevious.Show();
+                    this.buttonNext.Show();
 
+                }
+                setFormElementsFromDataset(listOfSales[currentIdx]);
             }
-            setFormElementsFromDataset(listOfSales[currentIdx]);
 
         }
 
         private void FormSaleHistory_Load(object sender, EventArgs e)
         {
-            currentIdx = -1;
-            readFromXml();
             getElementFromList(currentIdx);
         }
     }
