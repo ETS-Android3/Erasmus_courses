@@ -17,8 +17,6 @@ namespace AutoCenter
     {
 
         public PrintTool printTool;
-        float carSalesPrice, accessoriesFinish, subtotal;
-        float amount, tax8, total, tradeInAllowance;
         public FormSale formSale;
         String historyFilename = "car_sales_history.xml";
 

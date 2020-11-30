@@ -66,6 +66,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.labelDateTime = new System.Windows.Forms.Label();
+            this.labelDateTimeValue = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.radioButtonCarExteriorFinish.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -208,7 +210,7 @@
             this.panel1.Controls.Add(this.textBoxSubtotal);
             this.panel1.Controls.Add(this.textBoxAccessoriesFinish);
             this.panel1.Controls.Add(this.textBoxCarSSalesPrice);
-            this.panel1.Location = new System.Drawing.Point(278, 48);
+            this.panel1.Location = new System.Drawing.Point(278, 63);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(284, 226);
             this.panel1.TabIndex = 4;
@@ -442,11 +444,30 @@
             this.printDialog1.AllowSomePages = true;
             this.printDialog1.UseEXDialog = true;
             // 
+            // labelDateTime
+            // 
+            this.labelDateTime.AutoSize = true;
+            this.labelDateTime.Location = new System.Drawing.Point(280, 31);
+            this.labelDateTime.Name = "labelDateTime";
+            this.labelDateTime.Size = new System.Drawing.Size(81, 20);
+            this.labelDateTime.TabIndex = 6;
+            this.labelDateTime.Text = "DateTime: ";
+            // 
+            // labelDateTimeValue
+            // 
+            this.labelDateTimeValue.AutoSize = true;
+            this.labelDateTimeValue.Location = new System.Drawing.Point(367, 31);
+            this.labelDateTimeValue.Name = "labelDateTimeValue";
+            this.labelDateTimeValue.Size = new System.Drawing.Size(0, 20);
+            this.labelDateTimeValue.TabIndex = 7;
+            // 
             // FormSaleHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 383);
+            this.Controls.Add(this.labelDateTimeValue);
+            this.Controls.Add(this.labelDateTime);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonGoBackToFormSale);
@@ -510,6 +531,8 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemGoBackToFormSale;
+        private System.Windows.Forms.Label labelDateTime;
+        private System.Windows.Forms.Label labelDateTimeValue;
     }
 }
 
