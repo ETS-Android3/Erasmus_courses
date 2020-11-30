@@ -1,6 +1,6 @@
 ﻿namespace AutoCenter
 {
-    partial class FormSale
+    partial class FormSaleHistory
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSale));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSaleHistory));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBoxComputerNavigation = new System.Windows.Forms.CheckBox();
             this.checkBoxLeatherInterior = new System.Windows.Forms.CheckBox();
@@ -38,10 +38,9 @@
             this.radioButtonCustomizedDetailing = new System.Windows.Forms.RadioButton();
             this.radioButtonPearlized = new System.Windows.Forms.RadioButton();
             this.radioButtonStandard = new System.Windows.Forms.RadioButton();
-            this.buttonCalculate = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.buttonPrintForm = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonPrevious = new System.Windows.Forms.Button();
+            this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonGoBackToFormSale = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelAmountDue = new System.Windows.Forms.Label();
             this.labelTradeInAllowance = new System.Windows.Forms.Label();
@@ -59,14 +58,9 @@
             this.textBoxCarSSalesPrice = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemPrintForm = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemGoBackToMainWizard = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemGoBackToFormSale = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItemEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemCalculate = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItemClear = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,6 +87,7 @@
             // checkBoxComputerNavigation
             // 
             this.checkBoxComputerNavigation.AutoSize = true;
+            this.checkBoxComputerNavigation.Enabled = false;
             this.checkBoxComputerNavigation.Location = new System.Drawing.Point(7, 89);
             this.checkBoxComputerNavigation.Name = "checkBoxComputerNavigation";
             this.checkBoxComputerNavigation.Size = new System.Drawing.Size(174, 24);
@@ -103,6 +98,7 @@
             // checkBoxLeatherInterior
             // 
             this.checkBoxLeatherInterior.AutoSize = true;
+            this.checkBoxLeatherInterior.Enabled = false;
             this.checkBoxLeatherInterior.Location = new System.Drawing.Point(7, 58);
             this.checkBoxLeatherInterior.Name = "checkBoxLeatherInterior";
             this.checkBoxLeatherInterior.Size = new System.Drawing.Size(132, 24);
@@ -113,6 +109,7 @@
             // checkBoxStereoSystem
             // 
             this.checkBoxStereoSystem.AutoSize = true;
+            this.checkBoxStereoSystem.Enabled = false;
             this.checkBoxStereoSystem.Location = new System.Drawing.Point(6, 26);
             this.checkBoxStereoSystem.Name = "checkBoxStereoSystem";
             this.checkBoxStereoSystem.Size = new System.Drawing.Size(125, 24);
@@ -125,6 +122,7 @@
             this.radioButtonCarExteriorFinish.Controls.Add(this.radioButtonCustomizedDetailing);
             this.radioButtonCarExteriorFinish.Controls.Add(this.radioButtonPearlized);
             this.radioButtonCarExteriorFinish.Controls.Add(this.radioButtonStandard);
+            this.radioButtonCarExteriorFinish.Enabled = false;
             this.radioButtonCarExteriorFinish.Location = new System.Drawing.Point(24, 167);
             this.radioButtonCarExteriorFinish.Name = "radioButtonCarExteriorFinish";
             this.radioButtonCarExteriorFinish.Size = new System.Drawing.Size(250, 125);
@@ -164,45 +162,35 @@
             this.radioButtonStandard.Text = "Standard";
             this.radioButtonStandard.UseVisualStyleBackColor = true;
             // 
-            // buttonCalculate
+            // buttonPrevious
             // 
-            this.buttonCalculate.Location = new System.Drawing.Point(24, 298);
-            this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(130, 62);
-            this.buttonCalculate.TabIndex = 2;
-            this.buttonCalculate.Text = "&Calculate";
-            this.buttonCalculate.UseVisualStyleBackColor = true;
-            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
+            this.buttonPrevious.Location = new System.Drawing.Point(30, 298);
+            this.buttonPrevious.Name = "buttonPrevious";
+            this.buttonPrevious.Size = new System.Drawing.Size(130, 62);
+            this.buttonPrevious.TabIndex = 2;
+            this.buttonPrevious.Text = "&Previous";
+            this.buttonPrevious.UseVisualStyleBackColor = true;
+            this.buttonPrevious.Click += new System.EventHandler(this.buttonPrevious_Click);
             // 
-            // buttonClear
+            // buttonNext
             // 
-            this.buttonClear.Location = new System.Drawing.Point(160, 298);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(130, 62);
-            this.buttonClear.TabIndex = 2;
-            this.buttonClear.Text = "C&lear";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.buttonNext.Location = new System.Drawing.Point(191, 298);
+            this.buttonNext.Name = "buttonNext";
+            this.buttonNext.Size = new System.Drawing.Size(130, 62);
+            this.buttonNext.TabIndex = 2;
+            this.buttonNext.Text = "&Next";
+            this.buttonNext.UseVisualStyleBackColor = true;
+            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
-            // buttonPrintForm
+            // buttonGoBackToFormSale
             // 
-            this.buttonPrintForm.Location = new System.Drawing.Point(296, 298);
-            this.buttonPrintForm.Name = "buttonPrintForm";
-            this.buttonPrintForm.Size = new System.Drawing.Size(130, 62);
-            this.buttonPrintForm.TabIndex = 2;
-            this.buttonPrintForm.Text = "&Print Form";
-            this.buttonPrintForm.UseVisualStyleBackColor = true;
-            this.buttonPrintForm.Click += new System.EventHandler(this.buttonPrintForm_Click);
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.Location = new System.Drawing.Point(432, 298);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(130, 62);
-            this.buttonExit.TabIndex = 2;
-            this.buttonExit.Text = "E&xit";
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.buttonGoBackToFormSale.Location = new System.Drawing.Point(432, 298);
+            this.buttonGoBackToFormSale.Name = "buttonGoBackToFormSale";
+            this.buttonGoBackToFormSale.Size = new System.Drawing.Size(130, 62);
+            this.buttonGoBackToFormSale.TabIndex = 2;
+            this.buttonGoBackToFormSale.Text = "Go Back To Form Sale";
+            this.buttonGoBackToFormSale.UseVisualStyleBackColor = true;
+            this.buttonGoBackToFormSale.Click += new System.EventHandler(this.toolStripMenuItemGoBackToFormSale_Click);
             // 
             // panel1
             // 
@@ -310,6 +298,7 @@
             // 
             // textBoxTradeInAllowance
             // 
+            this.textBoxTradeInAllowance.Enabled = false;
             this.textBoxTradeInAllowance.Location = new System.Drawing.Point(164, 163);
             this.textBoxTradeInAllowance.MaximumSize = new System.Drawing.Size(120, 27);
             this.textBoxTradeInAllowance.MinimumSize = new System.Drawing.Size(120, 27);
@@ -373,6 +362,7 @@
             // 
             // textBoxCarSSalesPrice
             // 
+            this.textBoxCarSSalesPrice.Enabled = false;
             this.textBoxCarSSalesPrice.Location = new System.Drawing.Point(164, 0);
             this.textBoxCarSSalesPrice.MaximumSize = new System.Drawing.Size(120, 27);
             this.textBoxCarSSalesPrice.MinimumSize = new System.Drawing.Size(120, 27);
@@ -392,40 +382,23 @@
             // toolStripMenuItemFile
             // 
             this.toolStripMenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemPrintForm,
-            this.toolStripMenuItemGoBackToMainWizard,
-            this.toolStripMenuItemHistory,
+            this.toolStripMenuItemGoBackToFormSale,
             this.toolStripMenuItemExit});
             this.toolStripMenuItemFile.Name = "toolStripMenuItemFile";
             this.toolStripMenuItemFile.Size = new System.Drawing.Size(46, 24);
             this.toolStripMenuItemFile.Text = "&File";
             // 
-            // toolStripMenuItemPrintForm
+            // toolStripMenuItemGoBackToFormSale
             // 
-            this.toolStripMenuItemPrintForm.Name = "toolStripMenuItemPrintForm";
-            this.toolStripMenuItemPrintForm.Size = new System.Drawing.Size(254, 26);
-            this.toolStripMenuItemPrintForm.Text = "&Print Form";
-            this.toolStripMenuItemPrintForm.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolStripMenuItemPrintForm.Click += new System.EventHandler(this.buttonPrintForm_Click);
-            // 
-            // toolStripMenuItemGoBackToMainWizard
-            // 
-            this.toolStripMenuItemGoBackToMainWizard.Name = "toolStripMenuItemGoBackToMainWizard";
-            this.toolStripMenuItemGoBackToMainWizard.Size = new System.Drawing.Size(254, 26);
-            this.toolStripMenuItemGoBackToMainWizard.Text = "Go Back To Main Wizard";
-            this.toolStripMenuItemGoBackToMainWizard.Click += new System.EventHandler(this.menuItemHelpGoBackToMainWizard_Click);
-            // 
-            // toolStripMenuItemHistory
-            // 
-            this.toolStripMenuItemHistory.Name = "toolStripMenuItemHistory";
-            this.toolStripMenuItemHistory.Size = new System.Drawing.Size(254, 26);
-            this.toolStripMenuItemHistory.Text = "&History";
-            this.toolStripMenuItemHistory.Click += new System.EventHandler(this.menuItemHistory_Click);
+            this.toolStripMenuItemGoBackToFormSale.Name = "toolStripMenuItemGoBackToFormSale";
+            this.toolStripMenuItemGoBackToFormSale.Size = new System.Drawing.Size(236, 26);
+            this.toolStripMenuItemGoBackToFormSale.Text = "Go Back To Form Sale";
+            this.toolStripMenuItemGoBackToFormSale.Click += new System.EventHandler(this.toolStripMenuItemGoBackToFormSale_Click);
             // 
             // toolStripMenuItemExit
             // 
             this.toolStripMenuItemExit.Name = "toolStripMenuItemExit";
-            this.toolStripMenuItemExit.Size = new System.Drawing.Size(254, 26);
+            this.toolStripMenuItemExit.Size = new System.Drawing.Size(236, 26);
             this.toolStripMenuItemExit.Text = "E&xit";
             this.toolStripMenuItemExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
@@ -434,36 +407,12 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemFile,
-            this.toolStripMenuItemEdit,
             this.toolStripMenuItemHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(584, 28);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItemEdit
-            // 
-            this.toolStripMenuItemEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemCalculate,
-            this.toolStripMenuItemClear});
-            this.toolStripMenuItemEdit.Name = "toolStripMenuItemEdit";
-            this.toolStripMenuItemEdit.Size = new System.Drawing.Size(49, 24);
-            this.toolStripMenuItemEdit.Text = "&Edit";
-            // 
-            // toolStripMenuItemCalculate
-            // 
-            this.toolStripMenuItemCalculate.Name = "toolStripMenuItemCalculate";
-            this.toolStripMenuItemCalculate.Size = new System.Drawing.Size(153, 26);
-            this.toolStripMenuItemCalculate.Text = "&Calculate";
-            this.toolStripMenuItemCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
-            // 
-            // toolStripMenuItemClear
-            // 
-            this.toolStripMenuItemClear.Name = "toolStripMenuItemClear";
-            this.toolStripMenuItemClear.Size = new System.Drawing.Size(153, 26);
-            this.toolStripMenuItemClear.Text = "C&lear";
-            this.toolStripMenuItemClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // toolStripMenuItemHelp
             // 
@@ -493,24 +442,23 @@
             this.printDialog1.AllowSomePages = true;
             this.printDialog1.UseEXDialog = true;
             // 
-            // FormSale
+            // FormSaleHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 383);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.buttonExit);
-            this.Controls.Add(this.buttonPrintForm);
-            this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.buttonCalculate);
+            this.Controls.Add(this.buttonGoBackToFormSale);
+            this.Controls.Add(this.buttonNext);
+            this.Controls.Add(this.buttonPrevious);
             this.Controls.Add(this.radioButtonCarExteriorFinish);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FormSale";
+            this.Name = "FormSaleHistory";
             this.Text = "Auto Center";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.buttonExit_Click);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.toolStripMenuItemGoBackToFormSale_Click);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.radioButtonCarExteriorFinish.ResumeLayout(false);
@@ -534,10 +482,9 @@
         private System.Windows.Forms.RadioButton radioButtonCustomizedDetailing;
         private System.Windows.Forms.RadioButton radioButtonPearlized;
         private System.Windows.Forms.RadioButton radioButtonStandard;
-        private System.Windows.Forms.Button buttonCalculate;
-        private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.Button buttonPrintForm;
-        private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Button buttonPrevious;
+        private System.Windows.Forms.Button buttonNext;
+        private System.Windows.Forms.Button buttonGoBackToFormSale;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxCarSSalesPrice;
         private System.Windows.Forms.TextBox textBoxAccessoriesFinish;
@@ -555,19 +502,14 @@
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.TextBox textBoxSalesTax_8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemFile;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemPrintForm;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExit;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemEdit;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHelp;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemCalculate;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClear;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemAbout;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemGoBackToMainWizard;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemHistory;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemGoBackToFormSale;
     }
 }
 

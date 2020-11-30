@@ -20,6 +20,7 @@ namespace AutoCenter
         float carSalesPrice, accessoriesFinish, subtotal;
         float amount, tax8, total, tradeInAllowance;
         public FormMain formMain;
+        private FormSaleHistory formSaleHistory;
         String historyFilename = "car_sales_history.xml";
 
 
@@ -29,10 +30,6 @@ namespace AutoCenter
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void menuItemHelpAbout_Click(object sender, EventArgs e)
         {
@@ -43,6 +40,17 @@ namespace AutoCenter
         {
             this.formMain.Show();
             this.Hide();
+        }
+        private void menuItemHistory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            if (formSaleHistory == null)
+            {
+                formSaleHistory = new FormSaleHistory();
+                formSaleHistory.formSale = this;
+            }
+            formSaleHistory.Show();
+
         }
 
         private void buttonClear_Click(object sender, EventArgs e)

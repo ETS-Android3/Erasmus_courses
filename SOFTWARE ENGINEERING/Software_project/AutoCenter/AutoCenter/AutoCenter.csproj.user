@@ -13,5 +13,8 @@
     <Compile Update="FormCarWash.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormSaleHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
