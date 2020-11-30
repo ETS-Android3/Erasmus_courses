@@ -20,6 +20,8 @@ namespace AutoCenter
         float carSalesPrice, accessoriesFinish, subtotal;
         float amount, tax8, total, tradeInAllowance;
         public FormMain formMain;
+        String historyFilename = "car_sales_history.xml";
+
 
 
         public FormSale()
@@ -320,17 +322,29 @@ namespace AutoCenter
         private void saveToXml()
         {
             XElement root;
-            String file = "car_sales_history.xml";
 
-            if (File.Exists(file))
-                root = XElement.Load(file);
+            if (File.Exists(historyFilename))
+                root = XElement.Load(historyFilename);
             else
                 root = new XElement("Sales");
 
             root.Add(new XElement("Sale",
                      new XElement("timeStamp", DateTime.Now.ToString()),
-                     new XElement("src00", "True")));
-            root.Save(file);
+                     new XElement("checkBoxStereoSystem", checkBoxStereoSystem.Checked),
+                     new XElement("checkBoxLeatherInterior", checkBoxLeatherInterior.Checked),
+                     new XElement("checkBoxComputerNavigation", checkBoxComputerNavigation.Checked),
+                     new XElement("radioButtonStandard", radioButtonStandard.Checked),
+                     new XElement("radioButtonPearlized", radioButtonPearlized.Checked),
+                     new XElement("radioButtonCustomizedDetailing", radioButtonCustomizedDetailing.Checked),
+                     new XElement("textBoxCarSSalesPrice", textBoxCarSSalesPrice.Text),
+                     new XElement("textBoxAccessoriesFinish", textBoxAccessoriesFinish.Text),
+                     new XElement("textBoxSubtotal", textBoxSubtotal.Text),
+                     new XElement("textBoxSalesTax_8", textBoxSalesTax_8.Text),
+                     new XElement("textBoxTotal", textBoxTotal.Text),
+                     new XElement("textBoxTradeInAllowance", textBoxTradeInAllowance.Text),
+                     new XElement("textBoxAmountDue", textBoxAmountDue.Text) 
+                     ));
+            root.Save(historyFilename);
         }
 
     }
