@@ -12,61 +12,72 @@
 using namespace std;
 int main(){
     int winwidth=800,winheight=600;
+    int xy[] = {651, 300, 576, 331, 562, 365, 621, 397, 589, 432, 548, 458, 485, 451, 456, 478, 424, 462, 383, 465, 327, 492, 316, 459, 282, 443, 234, 407, 261, 385, 245, 362, 236, 331, 651, 300};
     initwindow(winwidth,winheight);
+    int n=(sizeof(xy)/sizeof(xy[0]))/2;
+    std::cout << "n: " << n << std::endl;
+    
 
-    int ax = 250, ay = 500, a = 160, i;
-    int bx=ax+a;
-    int by=ay;
-    int cx=ax+a;
-    int cy=ay-a;
-    int dx=ax;
-    int dy=ay-a;
-    int mx=ax+a/2;
-    int my=ay-3./2*a;
+    // for(int i = 1; i< n+1; i++) {
+    //     circle(x[i],y[i],3);
+    //     line(x[i], y[i], x[(i+1)%n], y[(i+1)%n]);
+    // }
+    drawpoly(n, xy);
 
-    rectangle(dx,dy,bx,by);
-    line(dx,dy,mx,my);
-    line(mx,my,cx,cy);
-    delay(500);
 
-    double sx = 1.2, sy = 0.7;
-    int dxm = mx+ (dx-mx)*sx;
-    int dym = my+ (dy-my)*sy;
+    // int ax = 250, ay = 500, a = 160, i;
+    // int bx=ax+a;
+    // int by=ay;
+    // int cx=ax+a;
+    // int cy=ay-a;
+    // int dx=ax;
+    // int dy=ay-a;
+    // int mx=ax+a/2;
+    // int my=ay-3./2*a;
 
-    int bxm = mx+ (bx-mx)*sx;
-    int bym = my+ (by-my)*sy;
+    // rectangle(dx,dy,bx,by);
+    // line(dx,dy,mx,my);
+    // line(mx,my,cx,cy);
+    // delay(500);
 
-    int axm = mx+ (ax-mx)*sx;
-    int aym = my+ (ay-my)*sy;
-    int cxm = mx+ (cx-mx)*sx;
-    int cym = my+ (cy-my)*sy;
+    // double sx = 1.2, sy = 0.7;
+    // int dxm = mx+ (dx-mx)*sx;
+    // int dym = my+ (dy-my)*sy;
 
-    rectangle(dxm,dym,bxm,bym);
-    line(dxm,dym,mx,my);
-    line(mx,my,cxm,cym);
-    delay(500);
-    cleardevice();
+    // int bxm = mx+ (bx-mx)*sx;
+    // int bym = my+ (by-my)*sy;
 
-    for(i=1;i<=360;i+=360)
-    {
-        int axr = mx + (axm - mx)*cos(i*M_PI/180) - (aym - my)*sin(i*M_PI/180);
-        int ayr = my + (axm - mx)*sin(i*M_PI/180) + (aym - my)*cos(i*M_PI/180);
-        int bxr = mx + (bxm - mx)*cos(i*M_PI/180) - (bym - my)*sin(i*M_PI/180);
-        int byr = my + (bxm - mx)*sin(i*M_PI/180) + (bym - my)*cos(i*M_PI/180);
-        int cxr = mx + (cxm - mx)*cos(i*M_PI/180) - (cym - my)*sin(i*M_PI/180);
-        int cyr = my + (cxm - mx)*sin(i*M_PI/180) + (cym - my)*cos(i*M_PI/180);
-        int dxr = mx + (dxm - mx)*cos(i*M_PI/180) - (dym - my)*sin(i*M_PI/180);
-        int dyr = my + (dxm - mx)*sin(i*M_PI/180) + (dym- my)*cos(i*M_PI/180);
-        setcolor(15);
-        moveto(axr,ayr);
-        lineto(bxr, byr);
-        lineto(cxr,cyr);
-        lineto(dxr,dyr);
-        lineto(axr,ayr);
-        line(mx, my, cxr, cyr);
-        line(mx, my, dxr, dyr);
-        delay(40);
-    }
+    // int axm = mx+ (ax-mx)*sx;
+    // int aym = my+ (ay-my)*sy;
+    // int cxm = mx+ (cx-mx)*sx;
+    // int cym = my+ (cy-my)*sy;
+
+    // rectangle(dxm,dym,bxm,bym);
+    // line(dxm,dym,mx,my);
+    // line(mx,my,cxm,cym);
+    // delay(500);
+    // cleardevice();
+
+    // for(i=1;i<=360;i+=360)
+    // {
+    //     int axr = mx + (axm - mx)*cos(i*M_PI/180) - (aym - my)*sin(i*M_PI/180);
+    //     int ayr = my + (axm - mx)*sin(i*M_PI/180) + (aym - my)*cos(i*M_PI/180);
+    //     int bxr = mx + (bxm - mx)*cos(i*M_PI/180) - (bym - my)*sin(i*M_PI/180);
+    //     int byr = my + (bxm - mx)*sin(i*M_PI/180) + (bym - my)*cos(i*M_PI/180);
+    //     int cxr = mx + (cxm - mx)*cos(i*M_PI/180) - (cym - my)*sin(i*M_PI/180);
+    //     int cyr = my + (cxm - mx)*sin(i*M_PI/180) + (cym - my)*cos(i*M_PI/180);
+    //     int dxr = mx + (dxm - mx)*cos(i*M_PI/180) - (dym - my)*sin(i*M_PI/180);
+    //     int dyr = my + (dxm - mx)*sin(i*M_PI/180) + (dym- my)*cos(i*M_PI/180);
+    //     setcolor(15);
+    //     moveto(axr,ayr);
+    //     lineto(bxr, byr);
+    //     lineto(cxr,cyr);
+    //     lineto(dxr,dyr);
+    //     lineto(axr,ayr);
+    //     line(mx, my, cxr, cyr);
+    //     line(mx, my, dxr, dyr);
+    //     delay(40);
+    // }
     getch();
     return 0;
 }
