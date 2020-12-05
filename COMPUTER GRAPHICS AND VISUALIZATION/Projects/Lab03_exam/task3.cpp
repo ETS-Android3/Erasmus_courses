@@ -9,20 +9,33 @@
 
 // 3. TWO DIMENSIONAL TRANSFORMATIONS. Composition. For example: Input data: coordinates of 17 points of polygon. The program has to obtain the transformation polygon after next transformations: - rotation around third point with angle 120°; - scaling with Sx=2.4 Sy=5 .8 and point of scaling (-120, 160)
 
+#define MAX_POINTS 20
+
 using namespace std;
 int main(){
     int winwidth=800,winheight=600;
     int xy[] = {651, 300, 576, 331, 562, 365, 621, 397, 589, 432, 548, 458, 485, 451, 456, 478, 424, 462, 383, 465, 327, 492, 316, 459, 282, 443, 234, 407, 261, 385, 245, 362, 236, 331, 651, 300};
+    // int xyp[] = {651, 300, 576, 331, 562, 365, 621, 397, 589, 432, 548, 458, 485, 451, 456, 478, 424, 462, 383, 465, 327, 492, 316, 459, 282, 443, 234, 407, 261, 385, 245, 362, 236, 331, 651, 300};
     initwindow(winwidth,winheight);
     int n=(sizeof(xy)/sizeof(xy[0]))/2;
     std::cout << "n: " << n << std::endl;
     
 
-    // for(int i = 1; i< n+1; i++) {
-    //     circle(x[i],y[i],3);
-    //     line(x[i], y[i], x[(i+1)%n], y[(i+1)%n]);
-    // }
     drawpoly(n, xy);
+
+    // rotation
+    int rot_idx = 3;
+    float rot_angle = 120.0;
+    int rot_root_x = xy[(rot_idx-1)*2];
+    int rot_root_y = xy[(rot_idx-1)*2+1];
+    int xyp[MAX_POINTS*2];
+
+    for(int i = 0; i< n; i++) {
+        xyp[i*2] = rot_root_x + (xy[i*2] - rot_root_x)*cos(rot_angle*M_PI/(float)180) - (xy[i*2] - rot_root_x)*sin(rot_angle*M_PI/(float)180);
+        xyp[i*2+1] = rot_root_y + (xy[i*2+1] - rot_root_y)*sin(rot_angle*M_PI/(float)180) + (xy[i*2+1] - rot_root_y)*cos(rot_angle*M_PI/(float)180);
+    }
+    setcolor(5);
+    drawpoly(n, xyp);
 
 
     // int ax = 250, ay = 500, a = 160, i;
