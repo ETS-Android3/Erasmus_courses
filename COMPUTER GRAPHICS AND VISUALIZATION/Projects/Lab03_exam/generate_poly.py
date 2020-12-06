@@ -3,11 +3,19 @@
 import random
 import math
 
-winwidth=800
+winwidth=600
 winheight=600
 
-x_root = winwidth/2
-y_root = winheight/2
+x_root = winwidth/4
+# y_root = winheight - winheight/2
+y_root = 200
+
+window_scaling_radius = 1/15
+
+min_x_range = (winwidth*window_scaling_radius)
+max_x_range = (winwidth*window_scaling_radius)*3
+min_y_range = (winheight*window_scaling_radius)
+max_y_range = (winheight*window_scaling_radius)*3
 
 n = 17
 
@@ -21,8 +29,8 @@ x_list = []
 y_list = []
 
 for i in range(0,n):
-    x_cur = x_root + random.randint(int(winwidth/5),int(winwidth/3))*math.cos(i*math.pi/n)
-    y_cur = y_root + random.randint(int(winwidth/5),int(winheight/3))*math.sin(i*math.pi/n)
+    x_cur = x_root + random.randint(int(min_x_range),int(max_x_range))*math.cos(i*math.pi/n)
+    y_cur = y_root + random.randint(int(min_y_range),int(max_y_range))*math.sin(i*math.pi/n)
     x_list.append(int(x_cur))
     y_list.append(int(y_cur))
 
