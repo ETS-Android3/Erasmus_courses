@@ -133,3 +133,43 @@ Before drawing chart input data should be known.
 
 * Draw all sectors with method pieslice
 
+## 8. INTERPOLATION AND APPROXIMATION algorithms Classical approach for interpolation and approximation. Polynomial of Lagrang.
+
+* Approach for interpolation
+    * Building of function for which is valid f(x[i]) = y[i] about every one i and the function f(x) take "reasonable" value for every x in specified range
+    * "reasonable" is dependent from requirements and can be different for different functions/purposes
+    * If data are experimental data it can be rationally to interpolate they with smooth function
+
+* Approach for approximation
+    * If the data are crude the interpolation can be very difficult or impossible
+    * In those situations we can allow function output values to be similar to the experiment value 
+    * More general function can be used
+
+* Polynomial of Lagrange
+    * Most interpolation and approximation algorithm are built using the linear combination from elemental functions. When the elemental function is polynomial the kind of algorithm is definite from kind of polynomial.
+    * Lagrange polynomials are used for polynomial interpolation
+    * The important limitation is the data set can not have multiple points with the same x value
+    * Algorithm of Lagrange Interpolation
+
+    1. Start
+    2. Read Number of Data (n)
+    3. Read Data:
+    For i = 1 to n
+        Read Xi and Yi
+    Next i
+    4. Read xp
+    5. Initialize: yp = 0
+
+    6. For i = 1 to n
+        p = 1
+        For j =1 to n
+        If i ≠ j 
+            p = p * (xp - Xj)/(Xi - Xj)
+        End If
+        Next j
+        yp = yp + p * Yi
+    Next i
+
+    6. Print yp
+    7. Stop
+
