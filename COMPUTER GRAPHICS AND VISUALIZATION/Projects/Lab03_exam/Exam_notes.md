@@ -46,7 +46,8 @@ end for
 ## 7. THE ECONOMIC GRAPHICS, Histograms and circle diagrams
 Histograms and circle diagrams are often used to economical,
 statistical and sociological information
-### Histograms
+
+Histograms
 Histogram presents data as set of vertical or horizontal bars. Bars can be presented in different colors to achieve for better clarity.
 
 Data set should be list of objects that contains value and description of value.
@@ -109,7 +110,7 @@ where P is Px(for horizontal) or Py(for vertical)
         bottom right corner ( x0 + (a[i] - minA)/S) , y0 - i*(Ds + Dc) - Dc )
 
     end for
-### Circle diagram
+Circle diagram
 
 Presents data as a part of circle. It can be used for display percentage distribution of values.
 
@@ -148,6 +149,7 @@ Before drawing chart input data should be known.
 * Polynomial of Lagrange
     * Most interpolation and approximation algorithm are built using the linear combination from elemental functions. When the elemental function is polynomial the kind of algorithm is definite from kind of polynomial.
     * Lagrange polynomials are used for polynomial interpolation
+    * Main defect is the considerable hesitations can be between neighbors points
     * The important limitation is the data set can not have multiple points with the same x value
     * Algorithm of Lagrange Interpolation
 
@@ -172,4 +174,61 @@ Before drawing chart input data should be known.
 
     6. Print yp
     7. Stop
+
+## 10. CURVE OF BEZIE. The geometric algorithm for building of curve of Bezie. The algorithm of Horner.
+
+Polinomial of Bezie
+* The algorithm uses the multitude of points of support
+* Algorithm gives good results for 3d interpolation
+* Closeness curve from the points can be regulated by adding multiple points(of the same coordinates)
+
+Geometric algorithm for building of curve of Bezie:
+* It is used when m is smaller than 5
+
+Symbols:
+* Pi - Initial points of support 
+* Ri - old points of support
+* Qi - new points of support
+
+For every t from 0 to 1 with step dt do
+begin
+    for i from 0 to m Ri =Pi
+    n=m
+    While n>0 do
+    begin
+        For i from 0 to n-1 Qi =Ri + t . (Ri+1 - Ri )
+        n=n-1
+        For i from 0 to n Ri =Qi 
+    end
+    P(t)= R 0
+end
+
+The algorithm of Horner
+* It is used when m is larger than 5
+
+Symbols:
+* Pi - Initial points of support 
+* Ri - old points of support
+* Qi - new points of support
+
+For every t from 0 to 0,5 with step dt do
+begin
+    computing (1-t)^m
+    Q0=Pm
+    for i from 1 to m do
+    begin
+        Qi=(t(1-t))Q(i-1)+ C^(m- i)_m * P(m-i)
+    end
+    P(t)= (1-t)^m*Qm
+end
+For every t from 0,5 to 1 with step dt do
+begin
+    computing t^m
+    Q0 =P0
+    for i from 1 to m do
+    begin
+        Qi=((1-t)/t)*Q(i-1) + C^i_m*Pi
+    end
+    P(t)= t^m*Q_m
+end
 
