@@ -10,20 +10,22 @@
 // 1. Graphical presentation of experimental data in defined graphical windows For example: The program have to obtain graphical presentation function: y=x2+5sinx for -2≤x≤2 in gr. window. Gr. Window (x0,y0)=(50,400), Rx=300, Py=250
 
 #define POINTS_NUM 50
-#define AXIS_LABELS 5
 #define MIN_X_RANGE -2
 #define MAX_X_RANGE 2
 
 using namespace std;
 int main(){
     // chart root point (left-down corner of the window)
-    int x0, y0, dx, dy;
+    int x0, y0, adx, ady, dx, dy, ip, jp;
     x0 = 50;    y0 = 400;
     // size of the chart axis
-    dx = 300;   dy = 250;
+    adx = 300;   ady = 250;
+    // size of the chart axis grid
+    dx = 60;   dy = 50;
+    ip = adx/dx, jp = ady/dy;
     float x[POINTS_NUM], y[POINTS_NUM], maxX, minX, maxY, minY;
 
-    initwindow(dx+100, y0+50, "Example");
+    initwindow(adx+100, y0+50, "Example");
     
     // assign values
     for(int i=0; i<POINTS_NUM; i++){
@@ -46,7 +48,7 @@ int main(){
 
     float sx, sy;
     // scale coefficient of the X axis
-    sx = (maxX-minX)/dx;    sy =  (maxY-minY)/dy;
+    sx = (maxX-minX)/adx;    sy =  (maxY-minY)/ady;
 
     int xp[POINTS_NUM], yp[POINTS_NUM];
     for(int i=0; i<POINTS_NUM; i++){
@@ -62,8 +64,8 @@ int main(){
     int y0n=y0;
     if (minY<0) y0n=y0-(0-minY)/sy;
 
-    line(x0n, y0,  x0n,  y0-dy);
-    line(x0,  y0n, x0+dx,  y0n);
+    line(x0n, y0,  x0n,  y0-ady);
+    line(x0,  y0n, x0+adx,  y0n);
 
     // draw points and connections between
     for(int i=0; i<POINTS_NUM; i++){
@@ -74,22 +76,22 @@ int main(){
     }
 
     // axis description
-    int x_axis_sep = dx/AXIS_LABELS;
-    int y_axis_sep = dy/AXIS_LABELS;
-    for(int i=0; i<AXIS_LABELS+1; i++){
-        char text[20];
-        float x_desc, y_desc;
-        line(x0+x_axis_sep*i, y0, x0+x_axis_sep*i, y0+10 );
-        x_desc = minX+(i*sx*dx)/AXIS_LABELS;
+    char text[20];
+    float x_desc, y_desc;
+    for(int i=0; i<ip+1; i++){
+        line(x0+dx*i, y0, x0+dx*i, y0+10 );
+        x_desc = minX+(i*sx*adx)/ip;
         sprintf(text, "%.2f",x_desc);
         settextjustify(2,2);
-        outtextxy(x0+x_axis_sep*i,y0+15, text);
+        outtextxy(x0+dx*i,y0+15, text);
+    }
 
-        line(x0, y0-y_axis_sep*i, x0-10, y0-y_axis_sep*i );
-        y_desc = minY+(i*sy*dy)/AXIS_LABELS;
+    for(int i=0; i<jp+1; i++){
+        line(x0, y0-dy*i, x0-10, y0-dy*i );
+        y_desc = minY+(i*sy*ady)/jp;
         sprintf(text, "%.2f",y_desc);
         settextjustify(2,1);
-        outtextxy(x0-15,y0-y_axis_sep*i, text);
+        outtextxy(x0-15,y0-dy*i, text);
     }
 
     getch();
