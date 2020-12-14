@@ -232,3 +232,59 @@ begin
     P(t)= t^m*Q_m
 end
 
+
+## 11. TWO- DIMENSIONAL TRANSFORMATIONS. Composition.
+
+Symbols:
+P(x,y) - old point before transformation
+P'(x,y) - new point after transformation
+
+There are 4 basic 2d transformations:
+* translation
+* scaling
+* rotation
+* reflection
+
+TRANSLATION
+Translation is just adding offset D(dx, dy) to the point P.
+
+P' = P + D
+
+SCALING
+To scale object there are needed 3 values:
+* Sx scaling coefficient 
+* Sy scaling coefficient 
+* Pf point of scaling
+
+The vector equation may look like this:
+P' = Pf + (P - Pf)*S
+
+Decomposition of equation above:
+x' = Pfx + (x - Pfx)*Sx
+y' = Pfy + (Y - PfY)*SY
+
+ROTATION
+To rotate object there are needed 2 values:
+* Pr point(center) of scaling Pr(x,y)
+* R rotation matrix
+* alpha rotation angle
+
+R = |cos(alpha) -sin(alpha)|
+    |sin(alpha)  cos(alpha)|
+
+The vector equation may look like this:
+P' = Pr + (Pr - P)*R
+
+Decomposition of equation above:
+x' = Prx + (x - Prx)*cos(alpha) - (y - Pry)*sin(alpha)
+y' = Pry + (y - Pry)*cos(alpha) + (x - Prx)*sin(alpha)
+
+REFLECTION
+A figure created by a reflection is its mirror image in the axis or plane of reflection
+
+Reflection transformation matrix depends of the reflection axis.
+
+For the reflection about the x axis matrix is   |1  0|
+                                                |0 -1|
+
+In this example value of x should be multiplied by -1
