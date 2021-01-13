@@ -1,0 +1,921 @@
+openapi: 3.0.0
+info:
+  description: Easy Learn Community
+  version: 1.0.1
+  title: Easy Learn Community
+  contact:
+    email: kornelstefanczyk@wp.pl
+tags:
+  - name: users
+    description: Operations about users
+  - name: lessons
+    description: Everything about your Lessons
+  - name: report
+    description: Everything about report
+paths:
+  /api/v1/signup:
+    post:
+      tags:
+        - users
+      summary: Create user
+      description: Sign up user. Create new user account.
+      operationId: createUser
+      responses:
+        "200":
+          description: successful operation
+        "400":
+          description: "Bad request"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserPost"
+        description: Created user object
+        required: true
+  /api/v1/users/login:
+    post:
+      tags:
+        - users
+      summary: Logs user into the system
+      operationId: loginUser
+      responses:
+        "200":
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              schema:
+                type: integer
+                format: int32
+            X-Expires-After:
+              description: date in UTC when token expires
+              schema:
+                type: string
+                format: date-time
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserGetPut"
+        "400":
+          description: Invalid email/password supplied
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  description: The email for login
+                  type: string
+                  format: email
+                  example: "test@test.com"
+                password:
+                  description: The password for login in clear text
+                  type: string
+                  example: "test"
+  /api/v1/users:
+    get:
+      tags:
+        - users
+      description: Get data of current logged in user
+      summary: Get current logged in user
+      operationId: getLoggedInUser
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserGetPut"
+    put:
+      tags:
+        - users
+      summary: Updated current logged in user
+      description: This can only be done by the logged in user.
+      operationId: updateLoggedInUser
+      responses:
+        "200":
+          description: successful operation
+        "404":
+          description: User not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserGetPut"
+        description: Updated user object
+        required: true
+    delete:
+      tags:
+        - users
+      summary: Delete current logged in user
+      description: This can only be done by the logged in user.
+      operationId: deleteLoggedInUser
+      responses:
+        "401":
+          description: Unauthorized
+        "404":
+          description: User not found
+  /api/v1/users/password:
+    put:
+      tags:
+        - users
+      summary: Updates password of current logged in user
+      description: This can only be done by the logged in user.
+      operationId: updateLoggedInUserPassword
+      responses:
+        "200":
+          description: successful operation
+        "404":
+          description: User not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserChangePasswordPut"
+        description: Updated user object
+        required: true
+  /api/v1/users/lessons:
+    get:
+      tags:
+        - users
+      summary: Get lesson items of current logged in user
+      description: This can only be done by the logged in user.
+      operationId: getLessonItemsLoggedInUser
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LessonItemGet"
+        "400":
+          description: Invalid status value
+  "/api/v1/users/{id}":
+    get:
+      tags:
+        - users
+      description: Admin role required
+      summary: Get user by id
+      operationId: getUserById
+      parameters:
+        - name: id
+          in: path
+          description: The Id that needs to be fetched.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserGetPut"
+        "401":
+          description: Unauthorized
+        "404":
+          description: User not found                
+    put:
+      tags:
+        - users
+      summary: Updated user by id
+      description: Admin role required
+      operationId: updateUserById
+      parameters:
+        - name: id
+          in: path
+          description: The Id that needs to be fetched.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+        "401":
+          description: Unauthorized
+        "404":
+          description: User not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserGetPut"
+        description: Updated user object
+        required: true
+    delete:
+      tags:
+        - users
+      summary: Delete user by id
+      description: Admin role required
+      operationId: deleteUserById
+      parameters:
+        - name: id
+          in: path
+          description: The Id that needs to be deleted
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+        "401":
+          description: Unauthorized
+        "404":
+          description: User not found
+  "/api/v1/users/{id}/password":
+    put:
+      tags:
+        - users
+      summary: Updated password of user by user id
+      description: Admin role required
+      operationId: updateUserPasswordByUserId
+      parameters:
+        - name: id
+          in: path
+          description: The Id of user
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+        "404":
+          description: User not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserChangePasswordPut"
+        description: Updated user object
+        required: true
+  "/api/v1/users/{id}/info":
+    get:
+      tags:
+        - users
+      description: User info will be returned only if user is teacher
+      summary: Get teacher user info
+      operationId: getTeacherInfoById
+      parameters:
+        - name: id
+          in: path
+          description: The Id that needs to be fetched.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserInfoGet"
+        "400":
+          description: Invalid id supplied
+        "401":
+          description: Unauthorized
+        "404":
+          description: User not found
+  /api/v1/lessons:
+    post:
+      tags:
+        - lessons
+      summary: Add a new lesson item
+      operationId: addLessonItem
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LessonItemGet"
+        "405":
+          description: Invalid input
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LessonItemPost"
+    get:
+      tags:
+        - lessons
+      summary: Finds lesson items by params
+      description: Multiple status values can be provided with comma separated strings
+      operationId: findLessonItemByStatus
+      parameters:
+        - name: educationLevel
+          in: query
+          description: Education level values that need to be considered for filter
+          required: false
+          explode: true
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/EducationLevelValues"
+              example: "pl_level1_group_1"
+        - name: teachingLanguages
+          in: query
+          description: Education level values that need to be considered for filter
+          required: true
+          explode: true
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/TeachingLanguagesValues"
+        - name: fieldOfStudy
+          in: query
+          description: Field of study values that need to be considered for filter
+          required: true
+          explode: true
+          schema:
+            $ref: "#/components/schemas/FieldOfStudyValues"
+        - name: hourlyRateMin
+          in: query
+          description: Minimum hourly rate value that need to be considered for filter
+          required: false
+          schema:
+            type: number
+            format: float
+        - name: hourlyRateMax
+          in: query
+          description: Maximum hourly rate value that need to be considered for filter
+          required: false
+          schema:
+            type: number
+            format: float
+        - name: firstFreeLesson
+          in: query
+          description: First free lesson
+          required: false
+          schema:
+            type: boolean
+        - name: lessonPlaceMode
+          in: query
+          description: Place mode lesson
+          required: false
+          explode: true
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/LessonPlaceModeValues"
+        - name: availableOnline
+          in: query
+          description: Teacher have to has online status
+          required: false
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LessonItemGet"
+        "400":
+          description: Invalid status value
+  "/api/v1/lessons/{id}":
+    get:
+      tags:
+        - lessons
+      summary: Get lesson item by lesson item id
+      operationId: getLessonItemId
+      parameters:
+        - name: id
+          in: path
+          description: The id that needs to be fetched.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LessonItemGet"
+        "400":
+          description: Invalid id supplied
+        "404":
+          description: Lesson item not found
+    put:
+      tags:
+        - lessons
+      summary: Update an existing lesson item
+      description: This can only be done by the logged in user.
+      operationId: updateLessonItemById
+      parameters:
+        - name: id
+          in: path
+          description: id of lesson item that need to be updated
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Lesson item not found
+        "405":
+          description: Validation exception
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LessonItemPut"
+        description: Updated user object
+        required: true
+    delete:
+      tags:
+        - lessons
+      summary: Delete lesson item
+      description: This can only be done by the logged in user.
+      operationId: deleteLessonItemById
+      parameters:
+        - name: id
+          in: path
+          description: The id of the lesson item that needs to be deleted
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+        "400":
+          description: Invalid id supplied
+        "404":
+          description: Lesson item not found
+  "/api/v1/lessons/{id}/feedbacks":
+    post:
+      tags:
+        - lessons
+      summary: Add a new feedback for lesson item
+      operationId: addLessonItemFeedback
+      parameters:
+        - name: id
+          in: path
+          description: The id that needs to be fetched.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+        "405":
+          description: Invalid input
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LessonFeedbackPostPut"
+    get:
+      tags:
+        - lessons
+      summary: Get lesson item feedbacks by lesson item id
+      operationId: getLessonItemFeedbackId
+      parameters:
+        - name: id
+          in: path
+          description: The id that needs to be fetched.
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LessonFeedbackGet"
+        "400":
+          description: Invalid id supplied
+        "404":
+          description: Lesson item not found
+    put:
+      tags:
+        - lessons
+      summary: Update an existing lesson item feedback
+      description: This can only be done by the logged in user.
+      operationId: updateLessonItemFeedbackIdById
+      parameters:
+        - name: id
+          in: path
+          description: id of lesson item that need to be updated
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Lesson item not found
+        "405":
+          description: Validation exception
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LessonFeedbackPostPut"
+        description: Updated user object
+        required: true
+    delete:
+      # deprecated: true
+      tags:
+        - lessons
+      summary: Delete lesson item feedback
+      description: This can only be done by the logged in user.
+      operationId: deleteLessonItemFeedbackIdById
+      parameters:
+        - name: id
+          in: path
+          description: The id of the lesson item
+          required: true
+          schema:
+            type: string
+        - name: studentId
+          in: query
+          description: The id of the user that feedback item needs to be deleted. Available only for admin 
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          description: successful operation
+        "400":
+          description: Invalid id supplied
+        "404":
+          description: Lesson item not found
+components:
+  schemas:
+    User:
+      allOf:
+        - $ref: "#/components/schemas/UserBasicData"
+        - $ref: "#/components/schemas/UserStatusData"
+        - $ref: "#/components/schemas/UserGetPut"
+        - $ref: "#/components/schemas/UserPost"
+    UserBasicData:
+      type: object
+      properties:
+        _id:
+          type: string
+        firstName:
+          type: string
+          example: "John"
+        lastName:
+          type: string
+          example: "Rambo"
+        email:
+          type: string
+          example: "test@test.com"
+        phone:
+          type: string
+          example: "+48555666333"
+        dateOfBirth:
+          type: string
+          format: date-time
+          example: "2000-12-02T00:00:00.000Z"
+        educationLevel:
+          $ref: "#/components/schemas/EducationLevelValues"
+        gender:
+          type: string
+    UserContactData:
+      type: object
+      properties:
+        phone:
+          properties:
+            number:
+              type: string
+            visible:
+              type: boolean
+        email:
+          properties:
+            email:
+              description: As default email is the same as user email
+              type: string
+            visible:
+              type: boolean
+        photo:
+          description: Feature not implemented yet
+          type: string
+        firstFreeLessonEnable:
+          description: The teacher declare the first lesson will be for free
+          type: boolean
+        description:
+          type: string
+    UserStatusData:
+      type: object
+      properties:
+        registered:
+          type: string
+          format: date-time
+          example: "2020-06-11T11:12:53.759Z"
+        status:
+          type: string
+          description: Order Status
+          enum:
+            - active
+            - suspended
+            - inactive
+          example: "active"
+        role:
+          type: string
+          description: Order Status
+          enum:
+            - user
+            - student
+            - teacher
+            - admin
+          example: "student"
+    UserPost:
+      allOf:
+        - $ref: "#/components/schemas/UserBasicData"
+        - $ref: "#/components/schemas/UserStatusData"
+        - type: object
+          required:
+            - password
+          properties:
+            password:
+              type: string
+              example: "test"
+    UserGetPut:
+      allOf:
+        - $ref: "#/components/schemas/UserBasicData"
+        - $ref: "#/components/schemas/UserStatusData"
+        - type: object
+          properties:
+            contactInfo:
+              $ref: "#/components/schemas/UserContactData"
+    UserInfoGet:
+      allOf:
+        - type: object
+          properties:
+            registered:
+              type: string
+              format: date-time
+            _id:
+              type: string
+            firstName:
+              type: string
+            lastName:
+              type: string
+            email:
+              type: string
+            phone:
+              type: string
+            firstFreeLessonEnable:
+              description: The teacher declare the first lesson will be for free
+              type: boolean
+            educationLevel:
+              $ref: "#/components/schemas/EducationLevelValues"
+            photo:
+              description: Feature not implemented yet
+              type: string
+            userDescription:
+              type: string
+            availableOnline:
+              description: The information about the current availability of the tutor
+              type: boolean
+            lessonItems:
+              type: array
+              items:
+                allOf:
+                  - $ref: "#/components/schemas/LessonItemBasicData"
+                  - type: object
+                    properties:
+                      rating:
+                        description: Rating will be described as number of stars
+                        type: number
+                        format: float
+                      numberOfFeedbacks:
+                        type: number
+    UserChangePasswordPut:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+          example: "test"
+        newPassword:
+          type: string
+          example: "test"
+    LessonItem:
+      allOf:
+        - $ref: "#/components/schemas/LessonItemBasicData"
+        - $ref: "#/components/schemas/LessonItemPost"
+        - type: object
+          properties:
+            lessonFeedback:
+              type: array
+              items:
+                $ref: "#/components/schemas/LessonFeedback"
+    LessonItemPost:
+      allOf:
+        - $ref: "#/components/schemas/LessonItemBasicData"
+        - type: object
+          properties:
+            fieldOfStudy:
+              $ref: "#/components/schemas/FieldOfStudyValues"
+    LessonItemPut:
+      allOf:
+        - $ref: "#/components/schemas/LessonItemBasicData"
+    LessonItemGet:
+      allOf:
+        - $ref: "#/components/schemas/LessonItemBasicData"
+        - type: object
+          properties:
+            fieldOfStudy:
+              $ref: "#/components/schemas/FieldOfStudyValues"
+            rating:
+              description: Rating will be described as number of stars
+              type: number
+              format: float
+            numberOfFeedbacks:
+              type: number
+            availableOnline:
+              description: The information about the current availability of the tutor
+              type: boolean
+            phoneNumber:
+              type: string
+            email:
+              type: string
+            firstFreeLessonEnable:
+              description: The teacher declare the first lesson will be for free
+              type: boolean
+    LessonItemBasicData:
+      type: object
+      properties:
+        _id:
+          type: string
+        teacherId:
+          type: string
+        educationLevel:
+          type: array
+          items:
+            $ref: "#/components/schemas/EducationLevelValues"
+        places:
+          type: array
+          items:
+            type: object
+            format: text
+        teachingLanguages:
+          type: array
+          items:
+            $ref: "#/components/schemas/TeachingLanguagesValues"
+        hourlyRate:
+          type: number
+          format: float
+        onlineModeEnable:
+          description: The possibility of online classes
+          type: boolean
+        faceToFaceModeStudentPlaceEnable:
+          description: The possibility of teaching at the student's place
+          type: boolean
+        faceToFaceModeTeacherPlaceEnable:
+          description: The possibility of teaching at the teacher's place
+          type: boolean
+        description:
+          type: string
+    LessonFeedback:
+      allOf:
+        - $ref: "#/components/schemas/LessonFeedbackBasicData"
+        - type: object
+          properties:
+            valuableFeedback:
+              type: array
+              items:
+                type: object
+                properties:
+                  userId:
+                    type: string
+            notValuableFeedback:
+              type: array
+              items:
+                type: object
+                properties:
+                  userId:
+                    type: string
+    LessonFeedbackBasicData:
+      type: object
+      properties:
+        feedbackPostDate:
+          type: string
+          format: date-time
+          example: "2020-12-02T00:00:00.000Z"
+        feedbackEditDate:
+          type: string
+          format: date-time
+          example: "2020-12-06T00:00:00.000Z"
+        description:
+          type: string
+        rating:
+          description: Rating will be described as number of stars
+          type: number
+          format: float
+        studentId:
+          type: string
+    LessonFeedbackGet:
+      allOf:
+        - $ref: "#/components/schemas/LessonFeedbackBasicData"
+        - type: object
+          properties:
+            valuableFeedback:
+              type: number
+            notValuableFeedback:
+              type: number
+    LessonFeedbackPostPut:
+      allOf:
+        - $ref: "#/components/schemas/LessonFeedbackBasicData"
+    NotificationForm:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: my event id
+        event:
+          type: string
+          description: my event type
+        data:
+          type: object
+    EducationLevelValues:
+      type: string
+      enum:
+        - "pl_level1_group_1"
+        - "pl_level1_group_2"
+        - "pl_level2_element_1"
+        - "pl_level2_element_2"
+        - "pl_level3_element_1"
+        - "pl_level3_element_2"
+        - "pl_level3_element_3"
+        - "pl_level4_element_1"
+      example: "pl_level1_group_1"
+    FieldOfStudyValues:
+      type: string
+      enum:
+        - "lan_english"
+        - "lan_german"
+        - "lan_french"
+        - "lan_russian"
+        - "lan_spanish"
+        - "lan_italian"
+        - "lan_polish"
+        - "lan_polish_for_foreigners"
+        - "lan_other"
+        - "hum_history"
+        - "hum_civics"
+        - "hum_art_history"
+        - "hum_other"
+        - "sci_mathematics"
+        - "sci_chemistry"
+        - "sci_physics"
+        - "sci_biology"
+        - "sci_geography"
+        - "sci_statistics"
+        - "sci_other"
+        - "compsci_informatics"
+        - "compsci_computer_use"
+        - "compsci_programming"
+        - "compsci_other"
+        - "art_musical_instruments"
+        - "art_music"
+        - "art_drawing"
+        - "art_other"
+        - "other_primary_learning"
+        - "other_other"
+      example: "compsci_informatics"
+    TeachingLanguagesValues:
+      type: string
+      enum:
+        - "teach_lan_polish"
+        - "teach_lan_english"
+        - "teach_lan_german"
+        - "teach_lan_spanish"
+        - "teach_lan_italian"
+        - "teach_lan_french"
+        - "teach_lan_russian"
+        - "teach_lan_ukrainian"
+    LessonPlaceModeValues:
+      type: string
+      enum:
+        - "place_mode_online"
+        - "place_mode_teacher"
+        - "place_mode_student"
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
+externalDocs:
+  description: Swagger Petstore editor example
+  url: "https://editor.swagger.io/?docExpansion=none"
+servers:
+  - url: "http://localhost:3001"
