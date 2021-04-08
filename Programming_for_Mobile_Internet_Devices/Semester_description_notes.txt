@@ -1,0 +1,22 @@
+Semester goals:
+threads - handler -start activity for result
+mvdn
+adapters
+
+
+Task_1:
+	* 2 activities
+	* pass arguments to activity
+	* start activity for result
+	* validation - first and last name - every first letter is capital - use regex | faculty number - 10 nr | speciality: combobox
+		* Fields:
+		*	First name 		-	textview_first_name
+		*	Last name		-	textview_last_name
+		*	Faculty number	-	textview_faculty_number
+		*	Speciality		-	textview_speciality
+	* validation on lost focus
+	* button on submitt must be disabled until the data are valid
+
+	1) simple -> take, validate, pass to the another view
+	2) another -> start app with data, call activity for results and go back to old activity
+
