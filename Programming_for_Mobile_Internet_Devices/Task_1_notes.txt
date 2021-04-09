@@ -5,13 +5,13 @@
 
 
 [
-("textViewFirstName", "fragment1TextViewFirstNameLabel", "TextView"),
-("editTextFirstName", None, "EditText"),
-("textViewLastName", "fragment1TextViewLastNameLabel", "TextView"),
-("editTextLastName", None, "EditText"),
-("textViewFacultyNumber", "fragment1TextViewFacultyNumberLabel", "TextView"),
-("editTextFacultyNumber", None, "EditText"),
-("textViewSpecialty", "fragment1TextViewSpecialtyLabel", "TextView"),
-("editTextSpecialty", None, "EditText"),
-("buttonSubmitt", "fragment1ButtonSubmitt", "Button"),
-]
+            ("textViewFirstName", "fragment1TextViewFirstNameLabel", "TextView"),
+            ("editTextFirstName", None, "EditText"),
+            ("textViewLastName", "fragment1TextViewLastNameLabel", "TextView"),
+            ("editTextLastName", None, "EditText"),
+            ("textViewFacultyNumber", "fragment1TextViewFacultyNumberLabel", "TextView"),
+            ("editTextFacultyNumber", None, "EditText"),
+            ("textViewSpecialty", "fragment1TextViewSpecialtyLabel", "TextView"),
+            ("spinnerSpecialty", None, "Spinner"),
+            ("buttonSubmitt", "fragment1ButtonSubmittLabel", "Button"),
+        ]

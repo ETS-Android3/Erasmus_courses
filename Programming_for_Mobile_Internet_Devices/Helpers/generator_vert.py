@@ -18,7 +18,7 @@ class XmlGenerator:
             ("textViewFacultyNumber", "fragment1TextViewFacultyNumberLabel", "TextView"),
             ("editTextFacultyNumber", None, "EditText"),
             ("textViewSpecialty", "fragment1TextViewSpecialtyLabel", "TextView"),
-            ("editTextSpecialty", None, "EditText"),
+            ("spinnerSpecialty", None, "Spinner"),
             ("buttonSubmitt", "fragment1ButtonSubmittLabel", "Button"),
         ]
 

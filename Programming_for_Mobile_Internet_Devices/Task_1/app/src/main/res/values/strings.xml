@@ -16,5 +16,10 @@
     <string name="fragment1TextViewFacultyNumberLabel">Faculty number</string>
     <string name="fragment1TextViewSpecialtyLabel">Speciality</string>
     <string name="fragment1ButtonSubmittLabel">Submit</string>
+    <string-array name="fragment1SpinnerSpecialtyEntries">
+        <item>BigData</item>
+        <item>Internet Engineering</item>
+        <item>Electronics</item>
+    </string-array>
     <string name="xxx_label">XXXXXXX</string>
 </resources>
