@@ -17,6 +17,7 @@
     <string name="fragment1TextViewSpecialtyLabel">Speciality</string>
     <string name="fragment1ButtonSubmittLabel">Submit</string>
     <string-array name="fragment1SpinnerSpecialtyEntries">
+        <item>Not selected</item>
         <item>BigData</item>
         <item>Internet Engineering</item>
         <item>Electronics</item>

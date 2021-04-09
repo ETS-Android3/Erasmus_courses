@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -22,9 +23,10 @@ public class FirstFragment extends Fragment {
     private List<String> notValidItems = new ArrayList<String>();
     private Button buttonSubmitt = null;
     private Spinner spinnerSpecialty = null;
+    private ViewGroup firstFragmentViewGroup = null;
 
-    private void initValidation(LayoutInflater inflater) {
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_first, null);
+    private void initValidation() {
+        ViewGroup root = firstFragmentViewGroup;
         Log.i(TAG, "XXX initValidation items count: "+ ((ViewGroup) root).getChildCount());
         for(int index = 0; index < ((ViewGroup) root).getChildCount(); index++) {
             View nextChild = ((ViewGroup) root).getChildAt(index);
@@ -49,6 +51,7 @@ public class FirstFragment extends Fragment {
                 notValidItems.add(itemName);
             }
         }
+        Log.i(TAG, "AAA updateNotValidItems " + notValidItems);
         buttonSubmitt.setEnabled(notValidItems.isEmpty());
     }
 
@@ -77,8 +80,8 @@ public class FirstFragment extends Fragment {
             }
         }
         if(itemName.startsWith("spinner")) {
-            updateNotValidItems(itemName, Boolean.TRUE);
-
+            Spinner spinner = (Spinner)view;
+            updateNotValidItems(itemName, spinner.getSelectedItemPosition() != 0);
         }
     }
 
@@ -88,7 +91,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        initValidation(inflater);
+        initValidation();
         return inflater.inflate(R.layout.fragment_first, container, false);
     }
 
@@ -139,18 +142,15 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        spinnerSpecialty.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        spinnerSpecialty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-//                if (!hasFocus) {
-//                    // code to execute when EditText loses focus
-//                    Log.i(TAG, "spinnerSpecialty lost focus");
-//                }
-                if (hasFocus) {
-                    if (spinnerSpecialty.getWindowToken() != null) {
-                        spinnerSpecialty.performClick();
-                    }
-                }
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                validItem(view);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
 
