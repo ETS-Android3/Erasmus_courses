@@ -3,7 +3,6 @@ package com.example.task_1;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -55,7 +54,7 @@ public class FirstFragment extends Fragment {
         buttonSubmitt.setEnabled(notValidItems.isEmpty());
     }
 
-    private void validItem(View view){
+    private void validEditTextItem(View view){
         String itemName = view.getResources().getResourceEntryName(view.getId());
 //        Log.i(TAG, "YYY validItem " + itemName);
         if(itemName.startsWith("editText")) {
@@ -79,10 +78,6 @@ public class FirstFragment extends Fragment {
                 mEdit.setError("Not valid value");
             }
         }
-        if(itemName.startsWith("spinner")) {
-            Spinner spinner = (Spinner)view;
-            updateNotValidItems(itemName, spinner.getSelectedItemPosition() != 0);
-        }
     }
 
     @Override
@@ -91,6 +86,7 @@ public class FirstFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
+        firstFragmentViewGroup = (ViewGroup) inflater.inflate(R.layout.fragment_first, null);
         initValidation();
         return inflater.inflate(R.layout.fragment_first, container, false);
     }
@@ -115,7 +111,7 @@ public class FirstFragment extends Fragment {
                 if (!hasFocus) {
                     String itemName = v.getResources().getResourceEntryName(v.getId());
                     Log.i(TAG, itemName + " lost focus");
-                    validItem(v);
+                    validEditTextItem(v);
                 }
             }
         });
@@ -126,7 +122,7 @@ public class FirstFragment extends Fragment {
                 if (!hasFocus) {
                     String itemName = v.getResources().getResourceEntryName(v.getId());
                     Log.i(TAG, itemName + " lost focus");
-                    validItem(v);
+                    validEditTextItem(v);
                 }
             }
         });
@@ -137,7 +133,7 @@ public class FirstFragment extends Fragment {
                 if (!hasFocus) {
                     String itemName = v.getResources().getResourceEntryName(v.getId());
                     Log.i(TAG, itemName + " lost focus");
-                    validItem(v);
+                    validEditTextItem(v);
                 }
             }
         });
@@ -145,7 +141,8 @@ public class FirstFragment extends Fragment {
         spinnerSpecialty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                validItem(view);
+                String itemName = view.getResources().getResourceEntryName(spinnerSpecialty.getId());
+                updateNotValidItems(itemName, spinnerSpecialty.getSelectedItemPosition() != 0);
             }
 
             @Override
