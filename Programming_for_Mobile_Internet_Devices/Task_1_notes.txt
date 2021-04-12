@@ -15,3 +15,5 @@
             ("spinnerSpecialty", None, "Spinner"),
             ("buttonSubmitt", "fragment1ButtonSubmittLabel", "Button"),
         ]
+
+String firstName, String  lastName, String  facultyNumber, String specialty
