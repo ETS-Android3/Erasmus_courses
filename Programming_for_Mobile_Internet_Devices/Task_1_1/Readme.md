@@ -1,7 +1,5 @@
-# Task_1
+# Task_1_1
 ## Content
-Application based on Fragments. Data validation and printing implemented. Passing arguments between views <span style="color:red">NOT implemented</span>.
-
 Passing parameters between Intents. 
 
 Features:
@@ -19,7 +17,13 @@ Features:
   3. Pass data to the another view
 
 ## Screenshots
-![](./Readme/view_1.png)
-![](./Readme/view_2.png)
+### View not valid
+![View not valid](./Readme/view_1.png)
+
+### View valid
+![View valid](./Readme/view_2.png)
+
+### Result
+![Result](./Readme/view_3.png)
 <!-- ![](./Readme/default) -->
 
