@@ -8,6 +8,10 @@
     tools:context=".FirstFragment">
 
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp" />
+
     <TextView
         android:id="@+id/textViewFirstName"
         android:layout_width="wrap_content"

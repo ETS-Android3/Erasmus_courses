@@ -28,12 +28,16 @@ public class FirstFragment extends Fragment {
         ViewGroup root = firstFragmentViewGroup;
         Log.i(TAG, "XXX initValidation items count: "+ ((ViewGroup) root).getChildCount());
         for(int index = 0; index < ((ViewGroup) root).getChildCount(); index++) {
-            View nextChild = ((ViewGroup) root).getChildAt(index);
-            String itemName = root.getResources().getResourceEntryName(nextChild.getId());
-            Log.i(TAG, "XXX initValidation " + itemName);
-            if(itemName.startsWith("editText") || itemName.startsWith("spinner")){
-//                updateNotValidItems(itemName, Boolean.FALSE);
-                notValidItems.add(itemName);
+            try {
+                View nextChild = ((ViewGroup) root).getChildAt(index);
+                String itemName = root.getResources().getResourceEntryName(nextChild.getId());
+                Log.i(TAG, "XXX initValidation " + itemName);
+                if(itemName.startsWith("editText") || itemName.startsWith("spinner")){
+//                    updateNotValidItems(itemName, Boolean.FALSE);
+                    notValidItems.add(itemName);
+                }
+            } catch (Exception e){
+
             }
         }
         Log.i(TAG, "XXX initValidation " + notValidItems);
