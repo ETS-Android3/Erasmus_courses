@@ -5,85 +5,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AnotherActivity">
+    tools:context=".SecondAnotherActivity">
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="16dp" />
 
     <TextView
-        android:id="@+id/textViewFirstNameDescription"
+        android:id="@+id/textViewMarksNumberDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="8dp"
-        android:text="@string/fragment1TextViewFirstNameLabel" />
+        android:text="@string/secondAnotherTextViewMarksNumberLabel" />
 
 
     <TextView
-        android:id="@+id/textViewFirstNameView"
+        android:id="@+id/textViewMarksNumberView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_gravity="center_horizontal"
         android:textSize="25sp" />
 
-
     <TextView
-        android:id="@+id/textViewLastNameDescription"
+        android:id="@+id/textViewSumDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:layout_gravity="center_horizontal"
-        android:text="@string/fragment1TextViewLastNameLabel" />
+        android:layout_margin="8dp"
+        android:text="@string/secondAnotherTextViewSumLabel" />
 
 
     <TextView
-        android:id="@+id/textViewLastNameView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_gravity="center_horizontal"
-        android:textSize="25sp" />
-
-
-    <TextView
-        android:id="@+id/textViewFacultyNumberDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/fragment1TextViewFacultyNumberLabel" />
-
-
-    <TextView
-        android:id="@+id/textViewFacultyNumberView"
+        android:id="@+id/textViewSumView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_gravity="center_horizontal"
         android:textSize="25sp" />
-
-
     <TextView
-        android:id="@+id/textViewSpecialtyDescription"
+        android:id="@+id/textViewMeanDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:layout_gravity="center_horizontal"
-        android:text="@string/fragment1TextViewSpecialtyLabel" />
+        android:layout_margin="8dp"
+        android:text="@string/secondAnotherTextViewMeanLabel" />
+
 
     <TextView
-        android:id="@+id/textViewSpecialtyView"
+        android:id="@+id/textViewMeanView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_gravity="center_horizontal"
         android:textSize="25sp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="64dp" />
 
     <Button
         android:id="@+id/buttonGetMarks"
@@ -93,19 +69,16 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/anotherActivityButtonSubmittLabel" />
 
-    <TextView
-        android:id="@+id/textViewGradeDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/anotherActivityTextViewGradeLabel" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp" />
 
-    <TextView
-        android:id="@+id/textViewGradeView"
+    <Button
+        android:id="@+id/buttonAcceptMarks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_gravity="center_horizontal"
-        android:textSize="25sp" />
+        android:text="@string/fragment1ButtonSubmittLabel" />
+
 </LinearLayout>

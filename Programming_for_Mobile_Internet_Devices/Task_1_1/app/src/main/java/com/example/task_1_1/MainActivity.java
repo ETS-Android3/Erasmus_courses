@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 String itemName = root.getResources().getResourceEntryName(nextChild.getId());
                 Log.d(TAG, "XXX initValidation " + itemName);
                 if(itemName.startsWith("editText") || itemName.startsWith("spinner")){
-//                    updateNotValidItems(itemName, Boolean.FALSE);
                     notValidItems.add(itemName);
                 }
             } catch (Exception e){
@@ -145,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
         spinnerSpecialty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String itemName = view.getResources().getResourceEntryName(spinnerSpecialty.getId());
+                String itemName = getResources().getResourceEntryName(spinnerSpecialty.getId());
                 updateNotValidItems(itemName, spinnerSpecialty.getSelectedItemPosition() != 0);
             }
 

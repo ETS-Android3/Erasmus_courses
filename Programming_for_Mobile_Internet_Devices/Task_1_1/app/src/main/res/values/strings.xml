@@ -13,5 +13,10 @@
         <item>Internet Engineering</item>
         <item>Electronics</item>
     </string-array>
+    <string name="anotherActivityButtonSubmittLabel">Get Marks</string>
+    <string name="anotherActivityTextViewGradeLabel">Grade</string>
+    <string name="secondAnotherTextViewMarksNumberLabel">Marks Number</string>
+    <string name="secondAnotherTextViewSumLabel">Sum</string>
+    <string name="secondAnotherTextViewMeanLabel">Mean</string>
     <string name="xxx_label">XXXXXXX</string>
 </resources>

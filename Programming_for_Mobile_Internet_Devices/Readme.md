@@ -7,15 +7,8 @@ Application based on Fragments. Data validation and printing implemented. Passin
 ## Task_1_1 description
 [Link](Task_1_1/Readme.md)
 Passing parameters between Intents
-
-<!-- Handled states:
-* onCreate(Bundle savedInstanceState)
-* onStart()
-* onRestart()
-* onPostResume()
-* onStop()
-* onPause()
-* onDestroy() -->
+* startActivity(Intent)
+* startActivityForResult()
 
 
 <!-- ## Task 2 description
