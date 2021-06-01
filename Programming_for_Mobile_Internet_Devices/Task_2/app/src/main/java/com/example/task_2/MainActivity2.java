@@ -3,12 +3,11 @@ package com.example.task_2;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.task_2.city.City;
-import com.example.task_2.city.CityAdapter;
-import com.example.task_2.city.CitySource;
+import com.example.task_2.data.City;
+import com.example.task_2.data.CityAdapter;
+import com.example.task_2.data.CitySource;
 import com.example.task_2.helpers.Helpers;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,7 +15,6 @@ import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.example.task_2.city;
+package com.example.task_2.data;
 
 public class City {
     private String name;

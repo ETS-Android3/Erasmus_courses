@@ -3,11 +3,9 @@ package com.example.task_2;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.task_2.city.City;
-import com.example.task_2.city.Repository;
+import com.example.task_2.data.Repository;
 import com.example.task_2.helpers.Helpers;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

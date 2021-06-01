@@ -11,12 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/activity2NameDescLabel"
-        android:textSize="@dimen/list_desc_height"/>
+        android:textSize="@dimen/list_desc_text_size"/>
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/list_elem_height"/>
+        android:textSize="@dimen/list_elem_text_size"/>
 
     <Space
         android:layout_width="16dp"
@@ -26,11 +26,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/activity2PostCodeDescLabel"
-        android:textSize="@dimen/list_desc_height"/>
+        android:textSize="@dimen/list_desc_text_size"/>
 
     <TextView
         android:id="@+id/postCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/list_elem_height"/>
+        android:textSize="@dimen/list_elem_text_size"/>
 </LinearLayout>

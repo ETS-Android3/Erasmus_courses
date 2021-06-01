@@ -1,6 +1,4 @@
-package com.example.task_2.city;
-
-import com.example.task_2.city.City;
+package com.example.task_2.data;
 
 import java.util.ArrayList;
 

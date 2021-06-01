@@ -21,7 +21,9 @@
 
     <!--  Activity 5  -->
     <string name="title_activity_main5">MainActivity5</string>
-    <string name="activity5NameDescLabel">Name:</string>
+    <string name="activity5UserNameDescLabel">Name:</string>
+    <string name="activity5CityNameDescLabel">City:</string>
+    <string name="activity5PostCodeDescLabel">Post code:</string>
 
 
     <!-- Strings used for fragments for navigation -->

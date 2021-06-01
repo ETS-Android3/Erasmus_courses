@@ -1,4 +1,4 @@
-package com.example.task_2.city;
+package com.example.task_2.data;
 
 import android.content.Context;
 import android.view.LayoutInflater;

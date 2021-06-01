@@ -10,12 +10,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/activity3RateDescLabel"
-        android:textSize="@dimen/list_desc_height"/>
+        android:text="@string/activity4NameDescLabel"
+        android:textSize="@dimen/list_desc_text_size"/>
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/list_elem_height"/>
+        android:textSize="@dimen/list_elem_text_size"/>
 
 </LinearLayout>
