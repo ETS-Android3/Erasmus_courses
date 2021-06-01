@@ -1,6 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="list_title_text_size">36sp</dimen>
     <dimen name="list_elem_text_size">25sp</dimen>
     <dimen name="list_desc_text_size">16sp</dimen>
 </resources>

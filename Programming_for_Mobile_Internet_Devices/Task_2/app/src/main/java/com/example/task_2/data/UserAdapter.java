@@ -32,7 +32,7 @@ public class UserAdapter extends ArrayAdapter<User> {
         // retrieve items from the view
         TextView name = convertView.findViewById(R.id.userName);
         TextView city = convertView.findViewById(R.id.cityName);
-        TextView postCode = convertView.findViewById(R.id.postCode);
+        TextView postCode = convertView.findViewById(R.id.cityPostCode);
 
         // assigns the information from the User object to the elements in the view
         name.setText(user.getName());

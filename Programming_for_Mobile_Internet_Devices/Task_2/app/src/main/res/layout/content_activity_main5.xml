@@ -1,10 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="64dp" />
+    <!--    Activity 1    -->
+
+    <!--    Title    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity5Activity1Name"
+        android:textSize="@dimen/list_title_text_size"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    Name    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity5UserNameDescLabel"
+            android:textSize="@dimen/list_desc_text_size"/>
+
+        <TextView
+            android:id="@+id/activity1UserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_elem_text_size"/>
+    </LinearLayout>
 
 
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="32dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    Activity 2    -->
+
+    <!--    Title    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity5Activity2Name"
+        android:textSize="@dimen/list_title_text_size"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    City    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity5CityNameDescLabel"
+            android:textSize="@dimen/list_desc_text_size"/>
+
+        <TextView
+            android:id="@+id/activity2CityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_elem_text_size"/>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="0dp" />
+
+        <!--    City post code    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity5PostCodeDescLabel"
+            android:textSize="@dimen/list_desc_text_size"/>
+
+        <TextView
+            android:id="@+id/activity2CityPostCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_elem_text_size"/>
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="32dp" />
+
+    <!--    Activity 3    -->
+
+    <!--    Title    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity5Activity3Name"
+        android:textSize="@dimen/list_title_text_size"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    Rating    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity5RatingNameDescLabel"
+            android:textSize="@dimen/list_desc_text_size"/>
+
+        <TextView
+            android:id="@+id/activity3RatingName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_elem_text_size"/>
+    </LinearLayout>
+
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="32dp" />
+
+    <!--    Activity 4    -->
+
+    <!--    Title    -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/activity5Activity4Name"
+        android:textSize="@dimen/list_title_text_size"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--    Name    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity5UserNameDescLabel"
+            android:textSize="@dimen/list_desc_text_size"/>
+
+        <TextView
+            android:id="@+id/activity4UserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_elem_text_size"/>
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <!--    City    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity5CityNameDescLabel"
+            android:textSize="@dimen/list_desc_text_size"/>
+
+        <TextView
+            android:id="@+id/activity4CityName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_elem_text_size"/>
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="0dp" />
+
+        <!--    City post code    -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity5PostCodeDescLabel"
+            android:textSize="@dimen/list_desc_text_size"/>
+
+        <TextView
+            android:id="@+id/activity4CityPostCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/list_elem_text_size"/>
+    </LinearLayout>
+
+
+</LinearLayout>

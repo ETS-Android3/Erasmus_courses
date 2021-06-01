@@ -51,9 +51,11 @@ public class MainActivity4 extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                parent.getAdapter().getItem(position);
-//                appBundle.putSerializable("user", (User)parent.getAdapter().getItem(position));
-//                appBundle.putString("ratingName", (String)parent.getAdapter().getItem(position));
+                parent.getAdapter().getItem(position);
+                User user = (User)parent.getAdapter().getItem(position);
+                appBundle.putString("activity4UserName", user.getName());
+                appBundle.putString("activity4CityName", user.getCity().getName());
+                appBundle.putString("activity4CityPostCode", Integer.toString(user.getCity().getPostCode()));
                 Log.i(TAG, Helpers.bundle2string(appBundle));
             }
         });

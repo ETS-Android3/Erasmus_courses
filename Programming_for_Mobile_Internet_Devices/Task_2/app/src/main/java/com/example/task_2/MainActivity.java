@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent customIntent = new Intent(MainActivity.this, MainActivity2.class);
                 Bundle myDataTable = new Bundle();
-                myDataTable.putString("name", ((EditText) findViewById(R.id.editTextName)).getText().toString());
+                myDataTable.putString("activity1UserName", ((EditText) findViewById(R.id.editTextName)).getText().toString());
                 customIntent.putExtras(myDataTable);
                 startActivity(customIntent);
             }

@@ -24,6 +24,13 @@
     <string name="activity5UserNameDescLabel">Name:</string>
     <string name="activity5CityNameDescLabel">City:</string>
     <string name="activity5PostCodeDescLabel">Post code:</string>
+    <string name="activity5RatingNameDescLabel">Rating:</string>
+
+    <string name="activity5Activity1Name">Activity 1</string>
+    <string name="activity5Activity2Name">Activity 2</string>
+    <string name="activity5Activity3Name">Activity 3</string>
+    <string name="activity5Activity4Name">Activity 4</string>
+    <string name="activity5Activity5Name">Activity 5</string>
 
 
     <!-- Strings used for fragments for navigation -->

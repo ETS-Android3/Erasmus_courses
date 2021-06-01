@@ -50,8 +50,8 @@ public class MainActivity2 extends AppCompatActivity {
         itemsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                appBundle.putString("cityName", ((City)parent.getAdapter().getItem(position)).getName());
-                appBundle.putInt("cityPostCode", ((City)parent.getAdapter().getItem(position)).getPostCode());
+                appBundle.putString("activity2CityName", ((City)parent.getAdapter().getItem(position)).getName());
+                appBundle.putString("activity2CityPostCode", Integer.toString(((City)parent.getAdapter().getItem(position)).getPostCode()));
                 Log.i(TAG, Helpers.bundle2string(appBundle));
             }
         });

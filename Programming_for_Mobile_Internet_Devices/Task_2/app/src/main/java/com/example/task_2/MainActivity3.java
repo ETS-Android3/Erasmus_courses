@@ -54,7 +54,7 @@ public class MainActivity3 extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                appBundle.putString("ratingName", (String)parent.getAdapter().getItem(position));
+                appBundle.putString("activity3RatingName", (String)parent.getAdapter().getItem(position));
                 Log.i(TAG, Helpers.bundle2string(appBundle));
             }
         });
