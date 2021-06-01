@@ -41,7 +41,7 @@ public class CityAdapter extends BaseAdapter {
         // if there is no View object, fill in the layout for each item in the list
         if (convertView == null) {
             convertView = LayoutInflater.from(context).
-                    inflate(R.layout.layout_list_view_row_items, parent, false);
+                    inflate(R.layout.layout_list_view_row_item_city, parent, false);
         }
 
         // retrieve the current item from the display list

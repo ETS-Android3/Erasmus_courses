@@ -7,15 +7,18 @@
     <string name="activity1TextViewNameLabel">Name</string>
     <string name="activity1ButtonSubmittLabel">Submit</string>
     <!--  Activity 2  -->
+    <string name="title_activity_main2">Activity2</string>
     <string name="activity2NameDescLabel">Name:</string>
     <string name="activity2PostCodeDescLabel">Post code:</string>
-    <string name="title_activity_main2">Activity2</string>
+
+    <!--  Activity 2  -->
+    <string name="title_activity_main3">MainActivity3</string>
+    <string name="activity3RateDescLabel">Name:</string>
 
 
     <!-- Strings used for fragments for navigation -->
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="title_activity_main3">MainActivity3</string>
 
 
 </resources>
