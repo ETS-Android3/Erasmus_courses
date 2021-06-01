@@ -21,12 +21,13 @@ Used adapters:
 * Custom ArrayAdapter
 
 
-<!-- ## Laboratory 3 description
-[Link](235420_A3_poprawione/Readme.md)
-Application is calculator. 
+## Laboratory 3 description
+[Link](Task_3/Readme.md)
+Application is focused on RecyclerView elements. 
+ 
 
 Features:
-* Adapted to multiple layout sizes
-* Handling multiple layouts and orientation(horizontal/vertical)
-* Multiple buttons -->
+* RecyclerView
+* Floating Action Button
+* Image + other labels
 

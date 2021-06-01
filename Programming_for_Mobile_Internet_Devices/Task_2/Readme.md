@@ -23,20 +23,21 @@ Features:
 
 
 ## Screenshots
-<!-- ### View not valid
-![View not valid](./Readme/view_1.png)
+### Activity 1 - Name
+![Name](./Readme/activity_1.png)
 
-### View valid
-![View valid](./Readme/view_2.png)
+### Activity 2 - City
+![City](./Readme/activity_2.png)
 
-### Result from first form
-![Result](./Readme/view_3.png)
+### Activity 3 - Rating
+![Rating](./Readme/activity_3.png)
 
-### Make calculation in another activity
-![Result](./Readme/view_4.png)
+### Activity 4 - User
+![User](./Readme/activity_4.png)
 
-### Pass arguments to parent
-![Result](./Readme/view_5.png) -->
+### Activity 5 - Preview of selected elements
+![Preview of selected elements](./Readme/activity_5.png)
+![Preview of bundle](./Readme/activity_5_deb.png)
 
 <!-- ![](./Readme/default) -->
 
