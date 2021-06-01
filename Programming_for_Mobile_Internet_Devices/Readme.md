@@ -11,15 +11,14 @@ Passing parameters between Intents
 * startActivityForResult()
 
 
-<!-- ## Task 2 description
-[Link](235420_KS_A2_extended/Readme.md)
-Application is focused on User Interface elements. 
+## Task 2 description
+[Link](Task_2/Readme.md)
+Application is focused on Adapter elements. 
 
-Handle properties and listeners for elements:
-* Button
-* EditText
-* RadioGroup
-* RadioButton -->
+Used adapters:
+* BaseAdapter
+* ArrayAdapter
+* Custom ArrayAdapter
 
 
 <!-- ## Laboratory 3 description
