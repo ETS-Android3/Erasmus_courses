@@ -1,5 +1,6 @@
 package com.example.task_2;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.task_2.city.City;
@@ -15,6 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -60,6 +62,9 @@ public class MainActivity2 extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, Helpers.bundle2string(appBundle), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                Intent customIntent = new Intent(MainActivity2.this, MainActivity3.class);
+                customIntent.putExtras(appBundle);
+                startActivity(customIntent);
             }
         });
     }
