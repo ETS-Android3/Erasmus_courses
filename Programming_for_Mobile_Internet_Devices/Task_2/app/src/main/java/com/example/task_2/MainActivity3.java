@@ -1,5 +1,6 @@
 package com.example.task_2;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.task_2.city.City;
@@ -33,8 +34,9 @@ public class MainActivity3 extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, Helpers.bundle2string(appBundle), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent customIntent = new Intent(MainActivity3.this, MainActivity4.class);
+                customIntent.putExtras(appBundle);
+                startActivity(customIntent);
             }
         });
 

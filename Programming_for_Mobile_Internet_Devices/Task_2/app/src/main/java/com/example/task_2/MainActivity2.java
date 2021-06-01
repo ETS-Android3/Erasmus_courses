@@ -60,8 +60,6 @@ public class MainActivity2 extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, Helpers.bundle2string(appBundle), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 Intent customIntent = new Intent(MainActivity2.this, MainActivity3.class);
                 customIntent.putExtras(appBundle);
                 startActivity(customIntent);
