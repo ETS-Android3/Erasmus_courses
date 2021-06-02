@@ -9,14 +9,14 @@ Features:
 
 Assignment acceptance criteria:
 * Create an app with a list of fruits and vegetables using RecyclerView.
-* Each vegetable has a name, price and quantity
-* Each fruit has a name, price, quantity and sweetness index
+    * Each vegetable has a name, price and quantity
+    * Each fruit has a name, price, quantity and sweetness index
 * Add a Floating Action Button to change the amount of fruits and vegetables with random positive numbers.
 * When you click on an item from RecyclerView, launch a new asset containing:
-* Image of a fruit or vegetable
-* The name, price, quantity and sweetness index for the fruit
-* Text field for entering quantity for purchase and TextView in which to show the price for the selected number for purchase
-* Buy button - returns to MainActivity where the number of products purchased has been reduced.
+    * Image of a fruit or vegetable
+    * The name, price, quantity and sweetness index for the fruit
+    * Text field for entering quantity for purchase and TextView in which to show the price for the selected number for purchase
+    * Buy button - returns to MainActivity where the number of products purchased has been reduced.
 
 
 ## Links
