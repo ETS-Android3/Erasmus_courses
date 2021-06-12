@@ -20,8 +20,14 @@ Assignment acceptance criteria:
 
 
 ## Links
+University sources:
 * Assignment details [link](https://tu-varna.gitbook.io/programmingwithjava/android-basics/laboratorno-uprazhnenie-8/zadacha).
 * RecyclerView description [link](https://tu-varna.gitbook.io/programmingwithjava/android-basics/laboratorno-uprazhnenie-8/primerna-upotreba-na-recyclerview) and [link](https://tu-varna.gitbook.io/programmingwithjava/android-basics/laboratorno-uprazhnenie-8)
+* HTML of the pages is stored also in `Readme/Task3_.7z` archive
+
+Other sources:
+* Factory Method pattern [link](https://refactoring.guru/design-patterns/factory-method)
+* Implementation of multiple RecycleViev items types [link](https://stackoverflow.com/a/26245463/7862117)
 
 
 ## Screenshots
