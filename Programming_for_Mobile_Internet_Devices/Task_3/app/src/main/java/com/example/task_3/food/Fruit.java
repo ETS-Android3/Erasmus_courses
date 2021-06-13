@@ -12,6 +12,10 @@ public class Fruit extends FoodItem {
         return sweetnessIndex;
     }
 
+    public String getSweetnessIndexStr() {
+        return String.valueOf(sweetnessIndex);
+    }
+
     public void setSweetnessIndex(float sweetnessIndex) {
         this.sweetnessIndex = sweetnessIndex;
     }

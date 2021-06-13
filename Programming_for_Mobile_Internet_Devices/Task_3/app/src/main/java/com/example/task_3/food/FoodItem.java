@@ -1,11 +1,43 @@
 package com.example.task_3.food;
 
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 public class FoodItem {
 
-    public enum FoodItemType {
-        Default,
-        Vegerable,
-        Fruit
+    public class FoodItemType {
+        public static final int Default = 0;
+        public static final int Vegetable = 1;
+        public static final int Fruit = 2;
+
+        private int value;
+
+        public FoodItemType(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+
+        public void setValue(int value) {
+            this.value = value;
+        }
+
+        public String getName(){
+            switch (getValue()){
+                case Default:
+                    return "Default";
+                case Vegetable:
+                    return "Vegetable";
+                case Fruit:
+                    return "Fruit";
+                default:
+                    return null;
+            }
+        }
     }
 
     private String name;
@@ -26,10 +58,17 @@ public class FoodItem {
     }
 
     public FoodItem(String name, float price, float quantity, FoodItemType foodType) {
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-        this.foodType = foodType;
+        setName(name);
+        setPrice(price);
+        setQuantity(quantity);
+        setFoodType(foodType);
+    }
+
+    public FoodItem(String name, float price, float quantity, int foodType) {
+        setName(name);
+        setPrice(price);
+        setQuantity(quantity);
+        setFoodType(foodType);
     }
 
 
@@ -62,11 +101,19 @@ public class FoodItem {
     }
 
     public int getFoodTypeInt() {
-        return foodType.ordinal();
+        return foodType.getValue();
+    }
+
+    public String getFoodTypeName() {
+        return foodType.getName();
     }
 
     public void setFoodType(FoodItemType foodType) {
         this.foodType = foodType;
+    }
+
+    public void setFoodType(int foodType) {
+        this.foodType = new FoodItemType(foodType);
     }
 
 }
