@@ -16,4 +16,5 @@
     <string name="foodItemViewQuantityDescLabel">Quantity:</string>
     <string name="foodItemViewTypeDescLabel">Type:</string>
     <string name="fruitViewSweetIdxDescLabel">Sweetness index:</string>
+    <string name="title_activity_main2">MainActivity</string>
 </resources>

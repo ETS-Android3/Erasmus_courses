@@ -25,14 +25,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         // retrieve RecyclerView
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -42,6 +34,18 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         // Inserts a view manager
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.setFoodItems(FoodGenerator.generateFoodItems());
+                Snackbar.make(view, String.format("Number of elements %d", adapter.getItemCount()), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
     }
 
 }

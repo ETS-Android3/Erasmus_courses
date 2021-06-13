@@ -4,4 +4,6 @@
     <dimen name="list_title_text_size">36sp</dimen>
     <dimen name="list_elem_text_size">25sp</dimen>
     <dimen name="list_desc_text_size">16sp</dimen>
+    <dimen name="list_desc_space_size">16dp</dimen>
+    <dimen name="final_food_item_view_padding">16dp</dimen>
 </resources>

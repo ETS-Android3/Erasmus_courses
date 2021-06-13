@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +23,12 @@ public class FoodViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         this.foodItems = initFoodItems;
     }
 
+    public void setFoodItems(ArrayList<FoodItem> foodItems) {
+        this.foodItems = foodItems;
+        this.notifyDataSetChanged();
+    }
+
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //retrieves the context where the RecyclerView is located
@@ -35,15 +40,15 @@ public class FoodViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         // Creates a viewHolder object
         switch (viewType){
             case FoodItem.FoodItemType.Fruit:
-                foodItemView = inflater.inflate(R.layout.fruit_view, parent, false);
+                foodItemView = inflater.inflate(R.layout.fruit_item_list_item_view, parent, false);
                 return new FruitViewHolder((foodItemView));
 
             case FoodItem.FoodItemType.Vegetable:
-                foodItemView = inflater.inflate(R.layout.vegetable_view, parent, false);
+                foodItemView = inflater.inflate(R.layout.vegetable_item_list_item_view, parent, false);
                 return new FoodItemViewHolder((foodItemView));
 
             default:
-                foodItemView = inflater.inflate(R.layout.food_item_view, parent, false);
+                foodItemView = inflater.inflate(R.layout.food_item_list_item_view, parent, false);
                 return new FoodItemViewHolder((foodItemView));
         }
     }
