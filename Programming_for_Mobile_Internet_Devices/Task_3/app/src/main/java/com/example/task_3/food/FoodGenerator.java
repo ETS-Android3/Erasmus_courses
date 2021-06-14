@@ -1,6 +1,9 @@
 package com.example.task_3.food;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 public class FoodGenerator {
     public static ArrayList<FoodItem> generateFoodItems() {
@@ -19,11 +22,15 @@ public class FoodGenerator {
             if (randClass > 0.5) {
                 String name = String.format("f%d", idx);
                 float sweetnesIdx = (float)Math.round((float)(rand*100*10))/100.0f;
-                Fruit fruit = new Fruit(name, price, quantity, sweetnesIdx);
+                List<String> givenImageNamesList = Arrays.asList("apple_red", "apple_green", "chinese_goosebeery", "hami_melon", "orange", "lemon");
+                String imageName = givenImageNamesList.get((new Random()).nextInt(givenImageNamesList.size()));
+                Fruit fruit = new Fruit(name, price, imageName, quantity, sweetnesIdx);
                 foodItems.add((FoodItem)fruit);
             } else {
                 String name = String.format("v%d", idx);
-                Vegetable vegetable = new Vegetable(name, price, quantity);
+                List<String> givenImageNamesList = Arrays.asList("pumpkin", "tomato", "red_pepper");
+                String imageName = givenImageNamesList.get((new Random()).nextInt(givenImageNamesList.size()));
+                Vegetable vegetable = new Vegetable(name, price, imageName, quantity);
                 foodItems.add((FoodItem)vegetable);
             }
         }

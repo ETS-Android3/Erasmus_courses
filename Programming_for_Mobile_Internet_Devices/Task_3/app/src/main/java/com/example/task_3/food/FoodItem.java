@@ -44,10 +44,11 @@ public class FoodItem {
     private float price;
     private float quantity;
     private FoodItemType foodType;
-
+    private String imageName;
 
     public FoodItem() {
         setFoodType(FoodItemType.Default);
+        setImageName("empty");
     }
 
     public FoodItem(String name, float price, float quantity) {
@@ -57,18 +58,20 @@ public class FoodItem {
         this.quantity = quantity;
     }
 
-    public FoodItem(String name, float price, float quantity, FoodItemType foodType) {
+    public FoodItem(String name, float price, float quantity, String imageName, FoodItemType foodType) {
         setName(name);
         setPrice(price);
         setQuantity(quantity);
         setFoodType(foodType);
+        setImageName(imageName);
     }
 
-    public FoodItem(String name, float price, float quantity, int foodType) {
+    public FoodItem(String name, float price, float quantity, String imageName, int foodType) {
         setName(name);
         setPrice(price);
         setQuantity(quantity);
         setFoodType(foodType);
+        setImageName(imageName);
     }
 
 
@@ -84,6 +87,10 @@ public class FoodItem {
         return price;
     }
 
+    public String getPriceStr() {
+        return String.valueOf(price);
+    }
+
     public void setPrice(float price) {
         this.price = price;
     }
@@ -92,6 +99,9 @@ public class FoodItem {
         return quantity;
     }
 
+    public String getQuantityStr() {
+        return String.valueOf(quantity);
+    }
     public void setQuantity(float quantity) {
         this.quantity = quantity;
     }
@@ -116,4 +126,11 @@ public class FoodItem {
         this.foodType = new FoodItemType(foodType);
     }
 
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
 }

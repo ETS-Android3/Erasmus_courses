@@ -70,8 +70,8 @@ public class FoodViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         FoodItemViewHolder foodItemHolder = (FoodItemViewHolder)holder;
         // Sets the TextView value for basic fields
         foodItemHolder.setName(foodItem.getName());
-        foodItemHolder.setPrice(String.valueOf(foodItem.getPrice()));
-        foodItemHolder.setQuantity(String.valueOf(foodItem.getQuantity()));
+        foodItemHolder.setPrice(foodItem.getPriceStr());
+        foodItemHolder.setQuantity(foodItem.getQuantityStr());
         foodItemHolder.setType(foodItem.getFoodTypeName());
         switch (holder.getItemViewType()) {
             case FoodItem.FoodItemType.Fruit:

@@ -1,8 +1,8 @@
 package com.example.task_3.food;
 
 public class Fruit extends FoodItem {
-    public Fruit(String name, float price, float quantity, float sweetnessIndex) {
-        super(name, price, quantity, FoodItemType.Fruit);
+    public Fruit(String name, float price, String imageName, float quantity, float sweetnessIndex) {
+        super(name, price, quantity, imageName, FoodItemType.Fruit);
         this.sweetnessIndex = sweetnessIndex;
     }
 

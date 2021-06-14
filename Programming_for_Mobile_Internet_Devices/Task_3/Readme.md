@@ -31,21 +31,20 @@ Other sources:
 
 
 ## Screenshots
-<!-- ### Activity 1 - Name
-![Name](./Readme/activity_1.png) -->
+### Activity 1 - Main view
+![Main view](./Readme/00__main_view.png)
 
-<!-- ### Activity 2 - City
-![City](./Readme/activity_2.png) -->
+### Activity 1 - Generate new elements - refresh whole list
+![Generate new elements](./Readme/01__generate_lists.png)
 
-<!-- ### Activity 3 - Rating
-![Rating](./Readme/activity_3.png) -->
+### Activity 2 - Item details
+![Item details](./Readme/02__item_view.png)
 
-<!-- ### Activity 4 - User
-![User](./Readme/activity_4.png) -->
+### Activity 2 - Pop items
+![Pop items](./Readme/03__remove_items.png)
 
-<!-- ### Activity 5 - Preview of selected elements
-![Preview of selected elements](./Readme/activity_5.png)
-![Preview of bundle](./Readme/activity_5_deb.png) -->
+### Activity 1 - Updated single element on list
+![Updated single element on list](./Readme/04__updated_list.png)
 
 <!-- ![](./Readme/default) -->
 
