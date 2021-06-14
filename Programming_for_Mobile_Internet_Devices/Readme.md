@@ -31,3 +31,18 @@ Features:
 * Floating Action Button
 * Image + other labels
 
+
+## Laboratory 4 description
+[Link](Task_4/Readme.md)
+Application is focused on Threads. 
+
+Features:
+* Threads
+    * Runnable 
+    * HandlerThread 
+    * ThreadPoolExecutor 
+
+
+
+
+

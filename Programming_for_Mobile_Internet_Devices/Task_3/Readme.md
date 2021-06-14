@@ -23,7 +23,7 @@ Assignment acceptance criteria:
 University sources:
 * Assignment details [link](https://tu-varna.gitbook.io/programmingwithjava/android-basics/laboratorno-uprazhnenie-8/zadacha).
 * RecyclerView description [link](https://tu-varna.gitbook.io/programmingwithjava/android-basics/laboratorno-uprazhnenie-8/primerna-upotreba-na-recyclerview) and [link](https://tu-varna.gitbook.io/programmingwithjava/android-basics/laboratorno-uprazhnenie-8)
-* HTML of the pages is stored also in `Readme/Task3_.7z` archive
+* HTML of the pages is stored also in `Readme/Task_3.7z` archive
 
 Other sources:
 * Factory Method pattern [link](https://refactoring.guru/design-patterns/factory-method)
