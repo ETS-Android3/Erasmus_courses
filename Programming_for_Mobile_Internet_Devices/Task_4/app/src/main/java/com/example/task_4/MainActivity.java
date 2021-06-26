@@ -9,18 +9,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 
 import android.widget.ProgressBar;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
-    private static final int progressBarMax = 100;
+    private static final int progressBarMax = 30;
     private static final int progressBarStepTimeSleep = 20;
 
     private static int progress;
     private ProgressBar progressBar;
     private int progressStatus = 0;
-    private Handler handler = new Handler();
+    private static Handler handler = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                View view = getWindow().getDecorView().findViewById(android.R.id.content);
+                Boolean result = msg.getData().getBoolean("success");
+                String resultStr = String.format("Done %s", result.toString());
+                Snackbar.make(view, resultStr, Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+            }
+        };
+
 
         progress = 0;
         progressBar = (ProgressBar) findViewById(R.id.progressbar);
@@ -63,8 +78,11 @@ public class MainActivity extends AppCompatActivity {
                         handler.post(new Runnable() {
                             public void run() {
                                 progressBar.setVisibility(View.GONE);
-                                Snackbar.make(view, "Done", Snackbar.LENGTH_LONG)
-                                        .setAction("Action", null).show();
+                                Message message = handler.obtainMessage();
+                                Bundle b = new Bundle ();
+                                b.putBoolean("success", Math.random() > 0.5);
+                                message.setData(b);
+                                handler.sendMessage(message);
                             }
                         });
                     }
