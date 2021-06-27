@@ -35,6 +35,8 @@ University sources:
 
 * HTML of the pages is stored also in `Readme/Task_4.7z` archive
 
+* Stopwatch App description [link](https://www.geeksforgeeks.org/how-to-create-a-stopwatch-app-using-android-studio/)
+
 <!-- Other sources: -->
 <!-- * xxx [link](xxx) -->
 

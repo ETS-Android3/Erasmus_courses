@@ -1,5 +1,6 @@
 package com.example.task_4;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,6 +13,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 
+import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import java.util.Random;
@@ -37,9 +39,20 @@ public class MainActivity extends AppCompatActivity {
             public void handleMessage(Message msg) {
                 View view = getWindow().getDecorView().findViewById(android.R.id.content);
                 Boolean result = msg.getData().getBoolean("success");
-                String resultStr = String.format("Done %s", result.toString());
-                Snackbar.make(view, resultStr, Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+                if(result){
+                    Intent customIntent = new Intent(MainActivity.this, MainActivity2.class);
+                    Bundle dataBundle = new Bundle();
+                    String contentStr = ((EditText) findViewById(R.id.contentEditText)).getText().toString();
+                    dataBundle.putString("content", contentStr);
+                    customIntent.putExtras(dataBundle);
+                    startActivity(customIntent);
+
+                } else {
+                    String resultStr = String.format("Sending failed");
+                    Snackbar.make(view, resultStr, Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                }
+
             }
         };
 
