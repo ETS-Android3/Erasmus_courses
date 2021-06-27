@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/inner_frame_layout_padding"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivity2"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,5 +28,56 @@
             android:textSize="@dimen/list_elem_text_size"/>
 
     </LinearLayout>
+
+    <TextView
+
+    android:id="@+id/time_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+
+    android:textAppearance="@android:style/TextAppearance.Large"
+    android:textSize="56sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+        android:id="@+id/start_button"
+        android:layout_width="@dimen/buttons_linear_horizontal_width"
+        android:layout_weight="@dimen/buttons_linear_horizontal_weight"
+        android:layout_margin="@dimen/final_food_item_view_padding"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:onClick="onClickStart"
+        android:text="@string/start" />
+
+        <Button
+        android:id="@+id/stop_button"
+        android:layout_width="@dimen/buttons_linear_horizontal_width"
+        android:layout_weight="@dimen/buttons_linear_horizontal_weight"
+        android:layout_margin="@dimen/final_food_item_view_padding"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:onClick="onClickStop"
+        android:text="@string/stop" />
+
+        <Button
+        android:id="@+id/reset_button"
+        android:layout_width="@dimen/buttons_linear_horizontal_width"
+        android:layout_weight="@dimen/buttons_linear_horizontal_weight"
+        android:layout_margin="@dimen/final_food_item_view_padding"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:onClick="onClickReset"
+        android:text="@string/reset" />
+    </LinearLayout>
+
+
 
 </LinearLayout>

@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     private int doSomeWork() {
                         try {
-                            // ---simulate doing some work---
                             Thread.sleep(progressBarStepTimeSleep);
                         } catch (InterruptedException e) {
                             e.printStackTrace();

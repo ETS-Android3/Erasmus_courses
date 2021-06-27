@@ -12,4 +12,7 @@
     <string name="title_activity_main2">MainActivity2</string>
     <string name="itemViewContentDescLabel">Content:</string>
 
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="reset">Reset</string>
 </resources>
