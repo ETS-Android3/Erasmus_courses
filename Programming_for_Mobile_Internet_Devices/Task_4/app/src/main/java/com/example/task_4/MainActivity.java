@@ -19,7 +19,7 @@ import android.widget.ProgressBar;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int progressBarMax = 30;
+    private static final int progressBarMax = 100;
     private static final int progressBarStepTimeSleep = 20;
 
     private static int progress;

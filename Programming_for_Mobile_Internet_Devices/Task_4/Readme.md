@@ -42,20 +42,18 @@ University sources:
 
 
 ## Screenshots
-<!-- ### Activity 1 - Main view
-![Main view](./Readme/00__main_view.png) -->
+### Activity 1 - Main message view
+![Main view](./Readme/00_01_message_view.png)
 
-<!-- ### Activity 1 - Generate new elements - refresh whole list
-![Generate new elements](./Readme/01__generate_lists.png) -->
+### Activity 1 - Sending message progress bar
+![Sending message progress bar](./Readme/01_00_progress_bar.png)
 
-<!-- ### Activity 2 - Item details
-![Item details](./Readme/02__item_view.png) -->
+### Activity 1 - Sending message failed
+![Sending message failed](./Readme/01_01_sending_failed.png)
 
-<!-- ### Activity 2 - Pop items
-![Pop items](./Readme/03__remove_items.png) -->
+### Activity 2 - Started stopwatch
+![Started stopwatch](./Readme/02_00_started_stopwatch.png)
 
-<!-- ### Activity 1 - Updated single element on list
-![Updated single element on list](./Readme/04__updated_list.png) -->
 
 <!-- ![](./Readme/default) -->
 

@@ -13,7 +13,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     private TextView contentTextView;
 
-    private int seconds = 0;
+    private long miliseconds = 0;
     private boolean running;
 
     @Override
@@ -41,7 +41,7 @@ public class MainActivity2 extends AppCompatActivity {
 
     public void onClickReset(View view)
     {
-        seconds = 0;
+        miliseconds = 0;
     }
 
     private void runTimer()
@@ -56,21 +56,23 @@ public class MainActivity2 extends AppCompatActivity {
 
             public void run()
             {
+                int seconds = (int)(miliseconds / 1000);
                 int hours = seconds / 3600;
                 int minutes = (seconds % 3600) / 60;
                 int secs = seconds % 60;
+                int milis = (int)(miliseconds % 1000)/100;
 
                 String time = String.format(Locale.getDefault(),
-                                "%d:%02d:%02d", hours,
-                                minutes, secs);
+                                "%d:%02d:%02d.%01d", hours,
+                                minutes, secs, milis);
 
                 timeView.setText(time);
 
                 if (running) {
-                    seconds++;
+                    miliseconds += 100;
                 }
 
-                handler.postDelayed(this, 1000);
+                handler.postDelayed(this, 100);
             }
         });
     }
