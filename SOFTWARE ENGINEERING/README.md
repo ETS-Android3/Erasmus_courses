@@ -8,6 +8,26 @@ Module 2 is read but not reproduced because of errors
 ## C# Windows Forms Programming Assignment
 The description of the assignment is presented in file [Readme/Windows_Forms_assignment.pdf](Software_project/Windows_Forms_assignment.pdf)
 
+### Used Technologies
+* Graphical elements:
+    * Button
+    * RadioButton
+    * CheckBox
+    * GroupBox
+    * Panel
+    * Label
+    * TextBox
+    * ContextMenuStrip
+    * MenuStrip
+    * ToolStripMenuItem
+    * PrintDocument
+    * PrintDialog
+    * ComboBox
+    * ListBox
+* XML parsing XElement
+* Printing using System.Drawing.Printing and PrintLine
+* Hide, show and exit windows
+
 ### Screenshots
 
 #### Main view
