@@ -10,7 +10,7 @@ Goal of the Easy Learn Community project was to implement MongoDB database that 
 ## Network administration
 
 ## Programming for mobile internet devices
-This course was focused at basic paradigmats for developing mobile applications at Android platform. More details can be found in [Programming_for_Mobile_Internet_Devices\Readme.md](Programming_for_Mobile_Internet_Devices\Readme.md)
+This course was focused at basic paradigmats for developing mobile applications at Android platform. More details can be found in [Programming_for_Mobile_Internet_Devices\Readme.md](Programming_for_Mobile_Internet_Devices/Readme.md)
 
 ## Software engineering
 Practical part of this course was development of the C# application
